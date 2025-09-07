@@ -35,24 +35,24 @@
 // export default App
 
 import ProjectCard from './ProjectCard';
-
+import TopBar from './TopBar';
 
 function Bio() {
   return (
-    <section className="w-[45%] pl-6 flex flex-col justify-start text-blackish">
+    <section>
       <h2 className="text-[60px] font-light mb-4 font-neutraface leading-16">
-        Hi, my name is <span className="font-neutraface-bold">Kevin Wei</span>
+        Hi, my name is <br></br> <span className="font-neutraface-bold">Kevin Wei</span>
       </h2>
       <div className="font-proxima-nova text-base space-y-4">
-        <p className="leading-6 mb-4">
+        <p className="leading-6 mb-4 text-[18px]">
           I’m a sophomore at the University of Pennsylvania studying computer graphics.
           I love exploring the natural world by recreating it in code.
         </p>
-        <p className="leading-6 mb-4">
+        <p className="leading-6 mb-4 text-[18px]">
           In my free time I enjoy playing trumpet, writing poems, making dumplings,
           and getting on my bike to ride to some place I don’t understand.
         </p>
-        <p className="leading-6 mb-4">My favorite animal is a penguin.</p>
+        <p className="leading-6 mb-4 text-[18px]">My favorite animal is a penguin.</p>
       </div>
     </section>
   );
@@ -62,25 +62,13 @@ function Bio() {
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-whiteish text-gray-800">
-      {/* Header */}
-      <header className="bg-yellow-400 w-full flex justify-between items-center p-4">
-        <div className="flex items-center gap-2 font-neutraface-bold">
-          <span className="text-[24px] text-blackish">KEVIN WEI</span>
-        </div>
-
-        <nav className="flex gap-6 font-neutraface-italic text-blackish text-[15px]">
-          <a href="#about" className="hover:underline">ABOUT</a>
-          <a href="#projects" className="hover:underline">PROJECTS</a>
-          <a href="#publications" className="hover:underline">PUBLICATIONS</a>
-          <a href="#resume" className="hover:underline">RESUME</a>
-        </nav>
-      </header>
+      <TopBar />
 
       {/* Main content */}
       <main className="flex flex-1 w-full px-12 py-8">
         
         {/* Left side big card */}
-        <section className="w-[55%] flex-col justify-start pr-6 h-[85vh] overflow-y-scroll no-scrollbar">
+        <section className="w-[50%] ml-[10vw] flex-col justify-start pr-6 h-[85vh] overflow-y-scroll no-scrollbar mt-sm">
           <div className="bg-gray-900 text-white rounded-md shadow-md h-[300px] flex items-center justify-center mb-8">
             <h1 className="text-3xl font-bold text-center">
               Games Portfolio <br />
@@ -90,47 +78,92 @@ function App() {
 
           {/* Project previews */}
           <ProjectCard
-            title="Project Title"
-            description="A brief description of the project goes here." >
-
-            <div className="bg-gray-200 rounded-md h-[180px] flex items-center justify-center">
-              Custom Project 1
-            </div>
-            <div className="bg-gray-200 rounded-md h-[180px] flex items-center justify-center">
-              Custom Project 2
-            </div>
-
+            title="Descent"
+            description="Find creative ways to loop back onto your own tail in this slithery puzzle game!" 
+            imageURL1="thumbnail_descent.png"
+            imageURL2="descent1.png">
+          </ProjectCard>
+          
+          <ProjectCard
+            title="Prism"
+            description="Split off into prismatic color characters to solve perception-based puzzles! See the world in a new light." 
+            imageURL1="thumbnail_prism.png"
+            imageURL2="prism1.png">
           </ProjectCard>
 
           <ProjectCard
-            title="Project Title"
-            description="A brief description of the project goes here." >
-
-            <div className="bg-gray-200 rounded-md h-[180px] flex items-center justify-center">
-              Custom Project 1
-            </div>
-            <div className="bg-gray-200 rounded-md h-[180px] flex items-center justify-center">
-              Custom Project 2
-            </div>
-
+            title="A Game of Chess"
+            description="Inspired by T.S. Eliot's poem 'The Waste Land', play against the 'lidless man' from the poem, over a game of chess. Explore the cyclical nature of life." 
+            imageURL1="thumbnail_agameofchess.png"
+            imageURL2="agameofchess1.png">
           </ProjectCard>
 
-                    <ProjectCard
-            title="Project Title"
-            description="A brief description of the project goes here." >
+          <ProjectCard
+            title="the sky of the sky."
+            description="Play as a cold, cold, man who gains a special warmth and color in his life. Learn how opposites can attract by sharing memories with someone fundamentally different than you." 
+            imageURL1="thumbnail_theskyofthesky.png"
+            imageURL2="theskyofthesky1.png">
+          </ProjectCard>
 
-            <div className="bg-gray-200 rounded-md h-[180px] flex items-center justify-center">
-              Custom Project 1
-            </div>
-            <div className="bg-gray-200 rounded-md h-[180px] flex items-center justify-center">
-              Custom Project 2
-            </div>
+          <ProjectCard
+            title="Cooking with Rordon Gamsay"
+            description="Platform around the stressful kitchen of esteemed chef Rordon Gamsay as you race against time to cook a burger." 
+            imageURL1="thumbnail_cookingwithrordongamsay.png"
+            imageURL2="cookingwithrordongamsay1.png">
+          </ProjectCard>
 
+          <ProjectCard
+            title="Retro Flight"
+            description="Zoom across a vaporwave-style procedural landscape!" 
+            imageURL1="thumbnail_retroflight.png">
+          </ProjectCard>
+
+          <ProjectCard
+            title="Battle Turtle"
+            description="Play as a turtle with a gun fighting against mafia sharks, evil pufferfish, sliding penguins, and a giant kraken!"
+            imageURL1="thumbnail_battleturtle.png"
+            imageURL2="battleturtle1.png">
+          </ProjectCard>
+          
+          <ProjectCard
+            title="The Wei to the White House"
+            description="Do you have what it takes to become the President of the United States?" 
+            imageURL1="thumbnail_theweitothewhitehouse.png"
+            imageURL2="theweitothewhitehouse1.png">
+          </ProjectCard>
+
+          <ProjectCard
+            title="Everybody Wants Just One More Day"
+            description="A narrative exploration game about a father and a son. Inspired by a poem by William J. Harris." 
+            imageURL1="thumbnail_everybodywantsjustonemoreday.png"
+            imageURL2="everybodywantsjustonemoreday2.png">
+          </ProjectCard>
+
+          <ProjectCard
+            title="Ouroboros"
+            description="Find creative ways to loop back onto your own tail in this slithery puzzle board game!" 
+            imageURL1="ouroboros1.png"
+            imageURL2="ouroboros2.png">
+          </ProjectCard>
+
+          <ProjectCard
+            title="Bullet Disco"
+            description="Play as a bullet who dashes between guns in this bullet-fast action game!" 
+            imageURL1="thumbnail_bulletdisco.png"
+            imageURL2="bulletdisco2.png">
+          </ProjectCard>
+
+          <ProjectCard
+            title="Stronger to Deader"
+            description="Win by... dying? Play as a mad scientist who controls his own zombies!"
+            imageURL1="thumbnail_strongertodeader.png">
           </ProjectCard>
         </section>
 
         {/* Right side bio */}
-        <Bio />
+        <section  className="w-[45%] ml-[3vh] flex flex-col justify-start text-blackish mr-[5vw]">
+          <Bio />
+        </section>
       </main>
 
       {/* Footer */}
