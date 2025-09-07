@@ -11,6 +11,6 @@ export default defineConfig({
     tailwindcss(),
   ],
 
-  base: "/",
+  base: "/personal-website/",
   
 })
