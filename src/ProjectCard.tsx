@@ -18,11 +18,11 @@ const ProjectCard = ({
     <div className="mb-14">
       <div className="grid grid-cols-2 gap-6 mb-1">
         
-        <img src={"/src/assets/images/" + imageURL1} alt={title} 
+        <img src={"/images/" + imageURL1} alt={title} 
           className="rounded-lg w-[252px] aspect-[126/100] object-cover" />
 
         { imageURL2 && (
-          <img src={"/src/assets/images/" + imageURL2} alt={title} 
+          <img src={"/images/" + imageURL2} alt={title} 
             className="rounded-md w-[252px] aspect-[126/100] object-cover" />
         )}
 
