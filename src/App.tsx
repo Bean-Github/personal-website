@@ -89,8 +89,8 @@ function Bio() {
         </p>
         <p>
           <span className="text-green-400">// Hobbies</span> <br />
-          In my free time I play trumpet, write poems, make dumplings, and ride
-          my bike to places I don’t understand.
+          In my free time I enjoy playing trumpet, writing poems, making dumplings, and riding
+          my bike to someplace I don’t yet understand.
         </p>
         <p>
           <span className="text-green-400">// Favorite animal</span> <br />
