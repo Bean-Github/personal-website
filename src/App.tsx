@@ -64,6 +64,7 @@ import TopBar from './TopBar';
 //     </section>
 //   );
 // }
+
 function Bio() {
   return (
     <section className="shadow-xl rounded-lg bg-[#1e1e1e] text-[#d4d4d4] font-proxima-nova overflow-hidden">
