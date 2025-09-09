@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 function TopBar()
 {
     return (
@@ -7,8 +8,13 @@ function TopBar()
         {/* Header */}
         
         <div className="flex items-center gap-6 font-neutraface-bold ml-[1vw]">
-            <img src="penguin mini.svg" className="w-14 h-14 translate-y-2 relative z-10"/>
-            <span className="text-[24px] text-blackish">KEVIN WEI</span>
+            <a href = "/">
+              <img src="penguin mini.svg" className="w-14 h-14 translate-y-2 relative z-10"/>
+            </a>
+            
+            <a href = "/">
+              <span className="text-[24px] text-blackish">KEVIN WEI</span>
+            </a>
         </div>
 
         <nav className="flex gap-6 font-neutraface-italic text-blackish text-[15px] mr-[3vw]">
@@ -18,7 +24,21 @@ function TopBar()
           {/* <a href="#about" className="hover:underline">ABOUT</a>
           <a href="#projects" className="hover:underline">PROJECTS</a>
           <a href="#publications" className="hover:underline">PUBLICATIONS</a> */}
+          {/* <a href="/about" className="hover:underline">
+              ABOUT
+          </a>
+
+          <a href="/projects" className="hover:underline">
+              PROJECTS
+          </a>
+
+          <a href="/art" className="hover:underline">
+              ART
+          </a> */}
+
           <a href="Resume - Kevin Wei.pdf" className="hover:underline">RESUME</a>
+
+
         </nav>
       </header>
     );
