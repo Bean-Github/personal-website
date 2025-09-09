@@ -1,6 +1,7 @@
 import React from 'react';
 
-function TopBar(){
+function TopBar()
+{
     return (
       <header className="bg-yellow-400 w-full flex justify-between items-center p-3.5 h-[7vh] shadow-sm">     
         {/* Header */}

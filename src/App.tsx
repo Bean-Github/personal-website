@@ -36,6 +36,7 @@
 
 import ProjectCard from './ProjectCard';
 import TopBar from './TopBar';
+import TypingText from './TypingText';
 
 // function Bio() {
 //   return (
@@ -113,11 +114,11 @@ function App() {
       <main className="flex flex-1 w-full px-12 py-8">
 
         {/* Left side stuff */}
-        <section className="w-[50%] pl-10 ml-[10vw] mt-[10px] flex-col justify-start pr-6 h-[85vh] overflow-y-scroll no-scrollbar mt-sm">
+        <section className="z-10 w-[50%] pl-10 ml-[10vw] mt-[10px] flex-col justify-start pr-6 h-[80vh] overflow-y-scroll no-scrollbar mt-sm">
 
           {/* big card / video */}
           <div className="bg-blackish text-white rounded-md shadow-lg h-[225px] flex items-center justify-center mb-8">
-            <h1 className="text-3xl font-neutraface-bold text-center">
+            <h1 className="text-3xl font-neutraface-bold text-center hover:scale-110">
               Games Portfolio <br />
               <span className="text-lg font-neutraface">5+ years of game development</span>
             </h1>
@@ -277,10 +278,14 @@ function App() {
 
         {/* Right side bio */}
         <section  className="w-[45%] ml-[3vh] mt-[10px] flex flex-col justify-start text-blackish mr-[7vw]">
-          <Bio />
+          <div className="z-10">
+            <TypingText
+              stuff = {<Bio />}>
+            </TypingText>
+          </div>
           
-          <div className="w-full flex justify-between items-center p-3.5 h-[30vh] relative overflow-hidden">
-            <img src="penguin.svg" alt="A cute penguin" className="absolute bottom-0 right-0 translate-x-10 translate-y-50 rotate-345 mt-8 w-[500%]" />
+          <div className="pointer-events-none w-full flex justify-between items-center p-[100vh] absolute right-0 bottom-0 overflow-hidden">
+            <img src="penguin.svg" alt="A cute penguin" className="absolute bottom-0 right-0 translate-x-10 translate-y-[30vh] rotate-345 mt-8 w-[70vh]" />
 
           </div>
 
