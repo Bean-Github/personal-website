@@ -69,7 +69,7 @@ const ProjectCard = ({
       {/* Overlay for enlarged image */}
       {openImage && (
         <div
-          className="fixed inset-0 bg-blackish/75 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-blackish/85 flex items-center justify-center z-50"
           onClick={() => setOpenImage(null)}
         >
           <img
