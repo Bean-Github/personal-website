@@ -5,6 +5,9 @@ function About() {
     <div className="min-h-screen flex flex-col bg-whiteish text-gray-800">
         <TopBar />
 
+
+
+
     </div>
   );
 }

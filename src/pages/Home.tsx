@@ -1,102 +1,20 @@
 import React, { useState } from "react";
+import { useEffect, useRef } from "react";
 
 import ProjectCard from '../ProjectCard';
 import TopBar from '../TopBar';
 import TypingText from '../TypingText';
 
-function Bio() {
-  const [isCompact, setIsCompact] = useState(false);
+import Bio from './Bio'
 
+
+function ProjectPreviews() {
   return (
-    <section
-    onClick= {() => {if (isCompact) setIsCompact(false)}}
-      className={`shadow-xl rounded-lg bg-[#1e1e1e] text-[#d4d4d4] font-proxima-nova overflow-hidden 
-      transition-all duration-500 ease-in-out ${
-        isCompact
-          ? "scale-[0.95] opacity-80 cursor-pointer"
-          : "scale-100 opacity-100"
-      }`}
-    >
-      {/* IDE-style header */}
-      <div className="flex items-center gap-2 bg-[#2d2d2d] px-4 py-2 transition-colors duration-300">
-        <button
-          onClick={() => setIsCompact(true)}
-          className="w-3 h-3 rounded-full bg-red-400 hover:brightness-110 hover:scale-110 active:scale-90 transition-transform"
-          title="Collapse / Expand"
-        ></button>
-        <button
-          onClick={() => setIsCompact(true)}
-          className="w-3 h-3 rounded-full bg-yellow-300 hover:brightness-110 hover:scale-110 active:scale-90 transition-transform"
-          title="Compact Mode"
-        ></button>
-        <button
-          onClick={() => {
-            setIsCompact(true);
-          }}
-          className="w-3 h-3 rounded-full bg-green-400 hover:brightness-110 hover:scale-110 active:scale-90 transition-transform"
-          title="Reset"
-        ></button>
-
-        <span className="ml-4 text-sm text-gray-400 select-none">bio.cpp</span>
-      </div>
-
-      {/* Collapsible content */}
-      <div
-        className={"px-10 py-7 space-y-6 text-[16px] leading-7 transition-all duration-500 ease-in-out"}
-      >
-        <h2 className="text-[28px] font-neutraface-demi">
-          Hi, my name is{" "}
-          <span className="font-neutraface-bold text-blue-300">Kevin Wei</span>
-        </h2>
-
-        <p>
-          <span className="text-green-400">// About me</span> <br />
-          I’m a sophomore at the{" "}
-          <span className="text-orange-300">University of Pennsylvania</span>{" "}
-          studying{" "}
-          <span className="text-orange-300">computer graphics</span>. I love
-          exploring the natural world by recreating it in code.
-        </p>
-
-        <p>
-          <span className="text-green-400">// Hobbies</span> <br />
-          In my free time I enjoy playing trumpet, writing poems, making
-          dumplings, and riding my bike to someplace I don’t yet understand.
-        </p>
-
-        <p>
-          <span className="text-green-400">// Favorite animal</span> <br />
-          My favorite animal is a{" "}
-          <span className="text-purple-300">penguin</span> :)
-        </p>
-      </div>
-    </section>
-  );
-}
-
-function Home() {
-  return (
-    <div className="min-h-screen flex flex-col bg-whiteish text-gray-800">
-      <TopBar />
-
-      {/* Main content */}
-      <main className="flex flex-1 w-full px-12 py-8">
-
-        {/* Left side stuff */}
-        <section className="z-10 w-[50%] pl-10 ml-[10vw] mt-[11px] flex-col justify-start pr-6 h-[83vh] overflow-y-scroll no-scrollbar mt-sm">
-
-          {/* big card / video */}
-          <div className="bg-blackish text-white rounded-lg shadow-lg h-[225px] flex items-center justify-center mb-8">
-            <h1 className="text-3xl font-neutraface-bold text-center">
-              Games Portfolio <br />
-              <span className="text-lg font-neutraface">5+ years of game development</span>
-            </h1>
-          </div>
-
-          {/* Project previews */}
+    <div>
+        {/* Project previews */}
           <ProjectCard
             title="Fluid Renderer"
-            description="Newtonian fluid simulation based on Smoothed Particle Hydrodynamics (SPH) model and Navier-Stokes equations. Rendered with physically-based raymarching techniques (accurate refraction, reflection, and Fresnel effects)."
+            description="Realtime Newtonian fluid simulation based on the Smoothed Particle Hydrodynamics model and Navier-Stokes equations. Rendered with physically-based volumetric raymarching techniques (accurate light bouncing: reflection, refraction, and Fresnel effects)."
             imageURL1="fluidsim1.mp4"
             imageURL2="fluidsim3.mp4"
             whatitis="SIMULATION"
@@ -106,7 +24,7 @@ function Home() {
           
           <ProjectCard
             title="Flocks of Fish"
-            description="Explore the depths of a cartoon ocean! Swim with sharks, whales, and thousands of fishies in a 3D environment! Employs GPU-accelerated flocking simulation using boids algorithm and compute shaders." 
+            description="Explore the depths of a cartoon ocean! Swim with sharks, whales, and thousands of fishies in a 3D oceanic environment! The flocking simulation uses an optimized boids algorithm and supports realtime interactions with tens of thousands of fish." 
             imageURL1="boids1.mp4"
             imageURL2="boids2.mp4"
             whatitis="SIMULATION"
@@ -116,7 +34,7 @@ function Home() {
 
           <ProjectCard
             title="Clouds"
-            description="Soar through volumetric clouds! Created using raymarching and a 3D Worley + fBM noise function implemented in compute shaders." 
+            description="Soar through volumetric clouds! Using my custom GPU-accelerated 3D Worley + fBM noise generation tool, you can easily and rapidly generate 3D textures. These textures are then read by a density raymarcher to render clouds! Implements Henyey-Greenstein phase function (for forward scattering), absorbance, and light accumulation." 
             imageURL1="clouds2.mp4"
             imageURL2="clouds1.png"
             whatitis="SIMULATION"
@@ -126,7 +44,7 @@ function Home() {
 
           <ProjectCard
             title="A Bear Game"
-            description="Play as a bear who does bear things, like fishing, talking to people, buying donuts, taking pictures, and driving a car? Explore the open world, beaches, cities, and forests!" 
+            description="Play as a bear who does bear things, like fishing, catching bugs, and ... driving a car? In this cozy toon-shaded world you can talk to people, buy donuts, take pictures, and sail on a boat! Explore the open beaches, islands, cities, and forests." 
             imageURL1="abeargame2.mp4"
             imageURL2="abeargame3.mp4"
             whatitis="EXPLORATION"
@@ -135,8 +53,18 @@ function Home() {
           </ProjectCard>
 
           <ProjectCard
+            title="Descent"
+            description="Snowboard down a procedural mountain while avoiding trees. Do cool tricks and flips to gain points! How far can you go?" 
+            imageURL1="thumbnail_descent.png"
+            imageURL2="descent2.mp4"
+            whatitis="ACTION GAME"
+            datestart="Aug 2024"
+            dateend="Nov 2024">
+          </ProjectCard>
+
+          <ProjectCard
             title="Code: Purple"
-            description="A rigged character with facial shape keys and stylized smear frames." 
+            description="A fully rigged character with  facial shape keys and stylized smear frames." 
             imageURL1="characterpurple3.mp4"
             imageURL2="characterpurple2.mp4"
             whatitis="ANIMATION"
@@ -145,7 +73,7 @@ function Home() {
 
           <ProjectCard
             title="Tin Bucket"
-            description="An animated short film inspired by a poem. Utilizes custom SDF morph technique in geometry nodes. All assets and animations made by me in Blender." 
+            description="An animated short film inspired by a poem. Utilizes a SDF morph technique I made with geometry nodes. All assets and animations made by me in Blender." 
             imageURL1="tinbucket1.mp4"
             imageURL2="tinbucket2.mp4"
             whatitis="ANIMATION"
@@ -153,16 +81,6 @@ function Home() {
             dateend="Apr 2025">
           </ProjectCard>
 
-          <ProjectCard
-            title="Descent"
-            description="Snowboard down a procedural mountain while avoiding trees. Do cool tricks and flips to gain points! How far can you go?" 
-            imageURL1="thumbnail_descent.png"
-            imageURL2="descent1.png"
-            whatitis="ACTION GAME"
-            datestart="Aug 2024"
-            dateend="Nov 2024">
-          </ProjectCard>
-          
           <ProjectCard
             title="Prism"
             description="Split off into prismatic color characters to solve perception-based puzzles! See the world in a new light." 
@@ -262,22 +180,139 @@ function Home() {
             whatitis="PUZZLE PLATFORMER"
             datestart="Feb 2021">
           </ProjectCard>
+    </div>
+  )
+}
+
+function Home() {
+  const [activeProject, setActiveProject] = useState<string | null>(null);
+  const observer = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    const options: IntersectionObserverInit = {
+      root: null,
+      rootMargin: "-20% 0px -50% 0px", // 20% buffer on top/bottom
+      threshold: 0.5,
+    };
+
+    observer.current = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const target = entry.target as HTMLElement;
+          setActiveProject(target.dataset.project ?? null);
+        }
+      });
+    }, options);
+
+    const cards = document.querySelectorAll<HTMLElement>(".project-card");
+    cards.forEach((card) => observer.current?.observe(card));
+
+    return () => {
+      observer.current?.disconnect();
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen flex flex-col overflow-y-scroll no-scrollbar bg-whiteish text-gray-800">
+      <TopBar />
+
+      {/* Main content */}
+      <main className="flex flex-1 w-[85vw] px-12 py-15">
+
+        {/* Left side stuff */}
+        <section className="z-100 w-[50%] pl-10 py-5 ml-[10vw] mt-[11px] flex-col justify-start pr-6 h-[83vh] mt-sm">
+
+          {/* big card / video */}
+          <div 
+          id="games-portfolio"
+          className="relative bg-gradient-to-r font-proxima-nova mb-10 from-[#0f2027] via-[#0d252e] to-[#0a3044] rounded-2xl shadow-[0_0_5px] overflow-hidden h-[180px] flex items-center justify-between px-6 py-6 transition-all duration-300 ease-in-out">
+
+            {/* Left: Text */}
+            <div className="flex flex-col ml-4 justify-center text-left">
+              <h1 className="text-3xl font-neutraface-bold text-white drop-shadow-[0_0_12px_white]">
+                <span className="text-white ">{'< '}Games Portfolio{' />'}</span>
+              </h1>
+              <span className="mt-2 text-lg align-middle font-neutraface-italic text-gray-300">
+                5+ years of game development
+              </span>
+            </div>
+
+            {/* Right: Penguin */}
+            <div className="relative w-50 h-100">
+              <img 
+                src="/penguin.svg" 
+                alt="Penguin Mascot" 
+                className="opacity-70 select-none absolute bottom-4 right-0 w-[1000px] transform hover:-translate-y-4 transition-transform duration-500" 
+              />
+            </div>
+
+            {/* Optional: Faint code overlay */}
+            <pre className="absolute select-none -top-4 left-0 w-full h-full rotate-355 text-[10px] font-mono bg-gradient-to-tl from-green-200/1 to-green-200/18 bg-clip-text text-transparent pointer-events-none overflow-hidden">
+  {`#ifdef WELCOME_TO_MY_PORTFOLIO
+precision mediump float;
+#endif
+
+uniform vec2 kevin;
+uniform float wei;
+
+void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+    vec2 uv = fragCoord / kevin.xy;
+    
+    // Kevin's amazing fragment shader
+    vec2 penguinUV = floor(uv * vec2(50.0, 10.0));
+    
+    float k = step(0.0, penguinUV.x) * (1.0 - step(9.0, penguinUV.x)) * step(penguinUV.y, 9.0);
+    float e = step(10.0, penguinUV.x) * (1.0 - step(19.0, penguinUV.x)) * step(penguinUV.y, 9.0);
+    float v = step(20.0, penguinUV.x) * (1.0 - step(29.0, penguinUV.x)) * step(penguinUV.y, 9.0);
+    float i = step(30.0, penguinUV.x) * (1.0 - step(34.0, penguinUV.x)) * step(penguinUV.y, 9.0);
+    float n = step(35.0, penguinUV.x) * (1.0 - step(49.0, penguinUV.x)) * step(penguinUV.y, 9.0);
+    
+    float letter = k + e + v + i + n;
+    
+    // Make it bouncy like a happy Kevin
+    float bounce = sin(wei * 5.0 + uv.x * 10.0) * 0.3 + 0.7;
+    
+    vec3 color = vec3(1.0, 0.7, 0.2) * letter * bounce;
+    
+    fragColor = vec4(color, 1.0);
+}
+
+void main() {
+    mainImage(gl_FragColor, gl_FragCoord.xy);
+}
+  `}
+            </pre>
+            </div>
+
+          <section className="z-100 overflow-visible">
+            <ProjectPreviews />
+            <div className="h-[50vh]">
+
+            </div>
+          </section>
+
         </section>
 
         {/* Right side bio */}
-        <section  className="w-[45%] ml-[3vh] mt-[10px] flex flex-col justify-start text-blackish mr-[7vw]">
-
-            <TypingText
-              stuff = {<Bio />}>
-            </TypingText>
-
-          
-          <div className="pointer-events-none w-full flex justify-between items-center p-[100vh] absolute right-0 bottom-0 overflow-hidden">
-            <img src="penguin.svg" alt="A cute penguin" className="absolute bottom-0 right-0 translate-x-10 translate-y-[30vh] rotate-345 mt-8 w-[70vh]" />
-
+        <section className="py-5 ml-[3vh] mt-[10px] flex flex-col justify-start text-blackish mr-[7vw] z-10">
+          <div className="fixed z-10 w-[35%]">
+            <Bio activeProject={activeProject}/>
           </div>
 
+          <div className="pointer-events-none w-full flex justify-between items-center p-[100vh] right-0 absolute bottom-0 z-0 overflow-hidden">
+            <img 
+              src="penguin mini.svg" 
+              alt="A cute penguin" 
+              className="absolute bottom-0 right-0 translate-x-10 translate-y-[30vh] rotate-345 mt-8 w-[70vh] z-0" 
+            />
+
+            
+          </div>
+          {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#fff8e8]/100 to-white/0 z-5 pointer-events-none"></div>
         </section>
+        
+
       </main>
 
       {/* Footer */}
@@ -288,3 +323,4 @@ function Home() {
 
 
 export default Home;
+

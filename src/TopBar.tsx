@@ -4,7 +4,7 @@ import React from 'react';
 function TopBar()
 {
     return (
-      <header className="bg-yellow-400 w-full flex justify-between items-center p-3.5 h-[7vh] shadow-sm">     
+      <header className="bg-yellow-400 w-full fixed flex justify-between items-center p-3.5 h-[7vh] shadow-sm z-1000">     
         {/* Header */}
         
         <div className="flex items-center gap-6 font-neutraface-bold ml-[1vw]">
@@ -24,17 +24,17 @@ function TopBar()
           {/* <a href="#about" className="hover:underline">ABOUT</a>
           <a href="#projects" className="hover:underline">PROJECTS</a>
           <a href="#publications" className="hover:underline">PUBLICATIONS</a> */}
-          <a href="/about" className="hover:underline">
+          {/* <a href="/about" className="hover:underline">
               ABOUT
-          </a>
+          </a> */}
 
-          <a href="/projects" className="hover:underline">
+          <a href="https://kevinwei.itch.io/" className="hover:underline">
               PROJECTS
           </a>
 
-          <a href="/art" className="hover:underline">
+          {/* <a href="/art" className="hover:underline">
               ART
-          </a>
+          </a> */}
 
           <a href="Resume - Kevin Wei.pdf" className="hover:underline" target="_blank">RESUME</a>
 
