@@ -309,7 +309,7 @@ void main() {
             
           </div>
           {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#fff8e8]/100 to-white/0 z-5 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#fefff0]/100 via-[white]/25 to-white/0 z-5 pointer-events-none"></div>
         </section>
         
 
