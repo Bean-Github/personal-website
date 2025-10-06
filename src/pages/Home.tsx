@@ -242,12 +242,12 @@ function Home() {
               <img 
                 src="/penguin.svg" 
                 alt="Penguin Mascot" 
-                className="opacity-70 select-none absolute bottom-4 right-0 w-[1000px] transform hover:-translate-y-4 transition-transform duration-500" 
+                className="opacity-95 select-none absolute bottom-4 right-0 w-[1000px] transform hover:-translate-y-4 transition-transform duration-500" 
               />
             </div>
 
             {/* Optional: Faint code overlay */}
-            <pre className="absolute select-none -top-4 left-0 w-full h-full rotate-355 text-[10px] font-mono bg-gradient-to-tl from-green-200/1 to-green-200/18 bg-clip-text text-transparent pointer-events-none overflow-hidden">
+            <pre className="absolute select-none -top-4 left-0 w-full h-full rotate-355 text-[10px] font-mono bg-gradient-to-tl from-green-200/5 to-green-200/30 bg-clip-text text-transparent pointer-events-none overflow-hidden">
   {`#ifdef WELCOME_TO_MY_PORTFOLIO
 precision mediump float;
 #endif
@@ -269,7 +269,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     
     float letter = k + e + v + i + n;
     
-    // Make it bouncy like a happy Kevin
+    // Make it a happy Kevin
     float bounce = sin(wei * 5.0 + uv.x * 10.0) * 0.3 + 0.7;
     
     vec3 color = vec3(1.0, 0.7, 0.2) * letter * bounce;
