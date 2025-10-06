@@ -11,6 +11,9 @@ interface ProjectCardProps {
   imageURL1: string;
   imageURL2?: string;
   className?: string;
+  onOpen?: () => void;
+  onClose?: () => void;
+
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -22,6 +25,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   imageURL1,
   imageURL2,
   className = "",
+  onOpen,
+  onClose
+
 }) => {
   const [openImage, setOpenImage] = useState<string | null>(null);
 
@@ -42,16 +48,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     <div
       className={`project-card mb-14 ${className}`}
       data-project={title.toLowerCase().replace(/\s+/g, "-")}
+      data-open={openImage}
     >
       <div className="w-full">
         <div className="grid grid-cols-2 gap-6 mb-6 justify-center">
           {/* IMAGE 1 */}
           <motion.div
             ref={ref1}
-            className="aspect-[126/100]"
+            className="aspect-[126/100] z-50"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 120 }}
-            onClick={() => setOpenImage("/images/" + imageURL1)}
+            onClick={() => setOpenImage("/images/" + imageURL2)}
           >
             {inView1 &&
               (imageURL1.endsWith(".mp4") ? (
@@ -76,7 +83,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           {imageURL2 && (
             <motion.div
               ref={ref2}
-              className="aspect-[126/100]"
+              className="aspect-[126/100] z-50"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 120 }}
               onClick={() => setOpenImage("/images/" + imageURL2)}
@@ -105,10 +112,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* Info */}
         <div className="mt-4 text-sm text-blackish">
           <div className="flex justify-between items-center mb-2">
-            <h2 className="font-neutraface-bold text-[20px] mb-2">{title}</h2>
+            <h2 className="font-neutraface-bold text-[20px] mb-2  z-50 opacity-80">{title}</h2>
 
             {(whatitis || datestart || dateend) && (
-              <div className="text-right">
+              <div className="text-right  z-50 opacity-80">
                 {whatitis && (
                   <div className="font-neutraface-bold text-[12px] text-gray-700">
                     {whatitis}
@@ -122,14 +129,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               </div>
             )}
           </div>
-          <p className="font-proxima-nova">{description}</p>
+          <p className="font-proxima-nova z-50 relative opacity-70">{description}</p>
         </div>
       </div>
 
       {/* Overlay for enlarged image */}
       {openImage && (
         <div
-          className="fixed inset-0 bg-blackish/85 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-blackish/85 flex items-center justify-center z-250"
           onClick={() => setOpenImage(null)}
         >
           {openImage.endsWith(".mp4") ? (

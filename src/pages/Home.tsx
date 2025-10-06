@@ -220,12 +220,12 @@ function Home() {
       <main className="flex flex-1 w-[85vw] px-12 py-15">
 
         {/* Left side stuff */}
-        <section className="z-100 w-[50%] pl-10 py-5 ml-[10vw] mt-[11px] flex-col justify-start pr-6 h-[83vh] mt-sm">
+        <section className="w-[50%] pl-10 py-5 ml-[10vw] mt-[11px] flex-col justify-start pr-6 h-[83vh] mt-sm">
 
           {/* big card / video */}
           <div 
           id="games-portfolio"
-          className="relative bg-gradient-to-r font-proxima-nova mb-10 from-[#0f2027] via-[#0d252e] to-[#0a3044] rounded-2xl shadow-[0_0_5px] overflow-hidden h-[180px] flex items-center justify-between px-6 py-6 transition-all duration-300 ease-in-out">
+          className="z-100 relative bg-gradient-to-r font-proxima-nova mb-10 from-[#0f2027] via-[#0d252e] to-[#0a3044] rounded-2xl shadow-[0_0_5px] overflow-hidden h-[180px] flex items-center justify-between px-6 py-6 transition-all duration-300 ease-in-out">
 
             {/* Left: Text */}
             <div className="flex flex-col ml-4 justify-center text-left">
@@ -284,11 +284,8 @@ void main() {
             </pre>
             </div>
 
-          <section className="z-100 overflow-visible">
+          <section className="z-100">
             <ProjectPreviews />
-            <div className="h-[50vh]">
-
-            </div>
           </section>
 
         </section>
@@ -309,7 +306,7 @@ void main() {
             
           </div>
           {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#fefff0]/100 via-[white]/25 to-white/0 z-5 pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#fefff0]/100 via-[white]/25 to-white/0 pointer-events-none"></div>
         </section>
         
 
