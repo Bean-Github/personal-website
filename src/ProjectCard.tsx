@@ -4,6 +4,8 @@ import React from 'react';
 import type { ReactNode } from 'react';
 import { useState } from 'react';
 
+import { motion } from "framer-motion";
+
 const ProjectCard = ({
   title,
   description,
@@ -32,17 +34,60 @@ const ProjectCard = ({
         <div className="grid grid-cols-2 gap-6 mb-1 justify-center">
           
           {/* IMAGES */}
-          <img src={"/images/" + imageURL1} alt={title}
-            className={imgStyle} 
+          {/* ensure that url is a video */}
+          <motion.div
+            className={imgStyle}
+            whileHover={{ scale: 1 }}
+            transition={{ type: "tween", stiffness: 120 }}
             onClick={() => setOpenImage("/images/" + imageURL1)}
-          />
+          > 
+          {
+            imageURL1.endsWith(".mp4") ? (
+              <video
+                src={"/images/" + imageURL1}
+                className={imgStyle}
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                Your browser does not support the video tag.
+              </video>
+            )
+              :
+            (
+            <img src={"/images/" + imageURL1} alt={title} className={imgStyle}
+            />
+            )
+          }
+          </motion.div>
 
-          { imageURL2 && (
-            <img src={"/images/" + imageURL2} alt={title} 
-              className={imgStyle}
-              onClick={() => setOpenImage("/images/" + imageURL2)}
-          />
-          )}
+          <motion.div
+            whileHover={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 120 }}
+            onClick={() => setOpenImage("/images/" + imageURL2)}
+          >
+          {imageURL2 &&
+            imageURL2.endsWith(".mp4") ? 
+            (          
+                <video
+                  src={"/images/" + imageURL2}
+                  className={imgStyle}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  Your browser does not support the video tag.
+                </video>
+            )
+            :
+            (
+                <img src={"/images/" + imageURL2} alt={title} className={imgStyle}
+              />
+            )
+          }
+        </motion.div>
 
         </div>
 
@@ -81,11 +126,19 @@ const ProjectCard = ({
           className="fixed inset-0 bg-blackish/85 flex items-center justify-center z-50"
           onClick={() => setOpenImage(null)}
         >
-          <img
+
+          <video
             src={openImage}
-            alt="Enlarged view"
-            className="max-w-[90%] max-h-[90%] rounded-lg shadow-2xl"
-          />
+            className={"max-w-[90%] max-h-[90%] rounded-lg shadow-2xl"}
+            autoPlay
+            loop
+            muted
+            playsInline
+            onClick={() => setOpenImage("/images/" + imageURL1)}
+          >
+            Your browser does not support the video tag.
+          </video>
+
         </div>
       )}
 

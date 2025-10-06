@@ -1,40 +1,73 @@
-import React from 'react';
+import React, { useState } from "react";
 
 import ProjectCard from '../ProjectCard';
 import TopBar from '../TopBar';
 import TypingText from '../TypingText';
 
 function Bio() {
+  const [isCompact, setIsCompact] = useState(false);
+
   return (
-    <section className="shadow-xl rounded-lg bg-[#1e1e1e] text-[#d4d4d4] font-proxima-nova overflow-hidden">
+    <section
+    onClick= {() => {if (isCompact) setIsCompact(false)}}
+      className={`shadow-xl rounded-lg bg-[#1e1e1e] text-[#d4d4d4] font-proxima-nova overflow-hidden 
+      transition-all duration-500 ease-in-out ${
+        isCompact
+          ? "scale-[0.95] opacity-80 cursor-pointer"
+          : "scale-100 opacity-100"
+      }`}
+    >
       {/* IDE-style header */}
-      <div className="flex items-center gap-2 bg-[#2d2d2d] px-4 py-2">
-        <span className="w-3 h-3 rounded-full bg-red-500"></span>
-        <span className="w-3 h-3 rounded-full bg-yellow-400"></span>
-        <span className="w-3 h-3 rounded-full bg-green-500"></span>
-        <span className="ml-4 text-sm text-gray-400">bio.cpp</span>
+      <div className="flex items-center gap-2 bg-[#2d2d2d] px-4 py-2 transition-colors duration-300">
+        <button
+          onClick={() => setIsCompact(true)}
+          className="w-3 h-3 rounded-full bg-red-400 hover:brightness-110 hover:scale-110 active:scale-90 transition-transform"
+          title="Collapse / Expand"
+        ></button>
+        <button
+          onClick={() => setIsCompact(true)}
+          className="w-3 h-3 rounded-full bg-yellow-300 hover:brightness-110 hover:scale-110 active:scale-90 transition-transform"
+          title="Compact Mode"
+        ></button>
+        <button
+          onClick={() => {
+            setIsCompact(true);
+          }}
+          className="w-3 h-3 rounded-full bg-green-400 hover:brightness-110 hover:scale-110 active:scale-90 transition-transform"
+          title="Reset"
+        ></button>
+
+        <span className="ml-4 text-sm text-gray-400 select-none">bio.cpp</span>
       </div>
 
-      {/* Regular content, lightly styled like code */}
-      <div className="px-10 py-7 space-y-6 text-[16px] leading-7">
+      {/* Collapsible content */}
+      <div
+        className={"px-10 py-7 space-y-6 text-[16px] leading-7 transition-all duration-500 ease-in-out"}
+      >
         <h2 className="text-[28px] font-neutraface-demi">
-          Hi, my name is <span className="font-neutraface-bold text-blue-300">Kevin Wei</span>
+          Hi, my name is{" "}
+          <span className="font-neutraface-bold text-blue-300">Kevin Wei</span>
         </h2>
 
         <p>
           <span className="text-green-400">// About me</span> <br />
-          I’m a sophomore at the <span className="text-orange-300">University of Pennsylvania</span> studying{" "}
-          <span className="text-orange-300">computer graphics</span>.  
-          I love exploring the natural world by recreating it in code.
+          I’m a sophomore at the{" "}
+          <span className="text-orange-300">University of Pennsylvania</span>{" "}
+          studying{" "}
+          <span className="text-orange-300">computer graphics</span>. I love
+          exploring the natural world by recreating it in code.
         </p>
+
         <p>
           <span className="text-green-400">// Hobbies</span> <br />
-          In my free time I enjoy playing trumpet, writing poems, making dumplings, and riding
-          my bike to someplace I don’t yet understand.
+          In my free time I enjoy playing trumpet, writing poems, making
+          dumplings, and riding my bike to someplace I don’t yet understand.
         </p>
+
         <p>
           <span className="text-green-400">// Favorite animal</span> <br />
-          My favorite animal is a <span className="text-purple-300">penguin</span> :)
+          My favorite animal is a{" "}
+          <span className="text-purple-300">penguin</span> :)
         </p>
       </div>
     </section>
@@ -54,7 +87,7 @@ function Home() {
 
           {/* big card / video */}
           <div className="bg-blackish text-white rounded-lg shadow-lg h-[225px] flex items-center justify-center mb-8">
-            <h1 className="text-3xl font-neutraface-bold text-center hover:scale-110">
+            <h1 className="text-3xl font-neutraface-bold text-center">
               Games Portfolio <br />
               <span className="text-lg font-neutraface">5+ years of game development</span>
             </h1>
@@ -63,9 +96,9 @@ function Home() {
           {/* Project previews */}
           <ProjectCard
             title="Fluid Renderer"
-            description="Newtonian fluid simulation using Smoothed Particle Hydrodynamics (SPH) and rendered with physically-based raymarching techniques (refraction, reflection, Fresnel effects)." 
-            imageURL1="fluidsim1.gif"
-            imageURL2="fluidsim2.gif"
+            description="Newtonian fluid simulation based on Smoothed Particle Hydrodynamics (SPH) model and Navier-Stokes equations. Rendered with physically-based raymarching techniques (accurate refraction, reflection, and Fresnel effects)."
+            imageURL1="fluidsim1.mp4"
+            imageURL2="fluidsim3.mp4"
             whatitis="SIMULATION"
             datestart="Jun 2025"
             dateend="Aug 2025">
@@ -73,9 +106,9 @@ function Home() {
           
           <ProjectCard
             title="Flocks of Fish"
-            description="GPU-accelerated flocking simulation of thousands of fish in a 3D environment!" 
-            imageURL1="boids1.gif"
-            imageURL2="boids2.gif"
+            description="Explore the depths of a cartoon ocean! Swim with sharks, whales, and thousands of fishies in a 3D environment! Employs GPU-accelerated flocking simulation using boids algorithm and compute shaders." 
+            imageURL1="boids1.mp4"
+            imageURL2="boids2.mp4"
             whatitis="SIMULATION"
             datestart="May 2025"
             dateend="Jun 2025">
@@ -84,7 +117,7 @@ function Home() {
           <ProjectCard
             title="Clouds"
             description="Soar through volumetric clouds! Created using raymarching and a 3D Worley + fBM noise function implemented in compute shaders." 
-            imageURL1="clouds2.gif"
+            imageURL1="clouds2.mp4"
             imageURL2="clouds1.png"
             whatitis="SIMULATION"
             datestart="Apr 2025"
@@ -94,8 +127,8 @@ function Home() {
           <ProjectCard
             title="A Bear Game"
             description="Play as a bear who does bear things, like fishing, talking to people, buying donuts, taking pictures, and driving a car? Explore the open world, beaches, cities, and forests!" 
-            imageURL1="abeargame2.gif"
-            imageURL2="abeargame3.gif"
+            imageURL1="abeargame2.mp4"
+            imageURL2="abeargame3.mp4"
             whatitis="EXPLORATION"
             datestart="Dec 2024"
             dateend="Apr 2025">
@@ -104,10 +137,20 @@ function Home() {
           <ProjectCard
             title="Code: Purple"
             description="A rigged character with facial shape keys and stylized smear frames." 
-            imageURL1="characterpurple3.gif"
-            imageURL2="characterpurple2.gif"
+            imageURL1="characterpurple3.mp4"
+            imageURL2="characterpurple2.mp4"
             whatitis="ANIMATION"
             datestart="May 2025">
+          </ProjectCard>
+
+          <ProjectCard
+            title="Tin Bucket"
+            description="An animated short film inspired by a poem. Utilizes custom SDF morph technique in geometry nodes. All assets and animations made by me in Blender." 
+            imageURL1="tinbucket1.mp4"
+            imageURL2="tinbucket2.mp4"
+            whatitis="ANIMATION"
+            datestart="Mar 2025"
+            dateend="Apr 2025">
           </ProjectCard>
 
           <ProjectCard

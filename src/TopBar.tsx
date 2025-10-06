@@ -24,7 +24,7 @@ function TopBar()
           {/* <a href="#about" className="hover:underline">ABOUT</a>
           <a href="#projects" className="hover:underline">PROJECTS</a>
           <a href="#publications" className="hover:underline">PUBLICATIONS</a> */}
-          {/* <a href="/about" className="hover:underline">
+          <a href="/about" className="hover:underline">
               ABOUT
           </a>
 
@@ -34,9 +34,9 @@ function TopBar()
 
           <a href="/art" className="hover:underline">
               ART
-          </a> */}
+          </a>
 
-          <a href="Resume - Kevin Wei.pdf" className="hover:underline">RESUME</a>
+          <a href="Resume - Kevin Wei.pdf" className="hover:underline" target="_blank">RESUME</a>
 
 
         </nav>
