@@ -63,6 +63,16 @@ function ProjectPreviews() {
           </ProjectCard>
 
           <ProjectCard
+            title="Ouroboros"
+            description="Find creative ways to loop back onto your own tail in this slithery puzzle board game! Achieved 5th Most Fun and 10th Best Overall out of 
+            over 1000 participants in Brackeys Game Jam 2023." 
+            imageURL1="ouroboros1.png"
+            imageURL2="ouroboros2.png"
+            whatitis="PLATFORMER"
+            datestart="Feb 2023">
+          </ProjectCard>
+          
+          <ProjectCard
             title="Code: Purple"
             description="A fully rigged character with  facial shape keys and stylized smear frames." 
             imageURL1="characterpurple3.mp4"
@@ -79,16 +89,6 @@ function ProjectPreviews() {
             whatitis="ANIMATION"
             datestart="Mar 2025"
             dateend="Apr 2025">
-          </ProjectCard>
-
-          <ProjectCard
-            title="Ouroboros"
-            description="Find creative ways to loop back onto your own tail in this slithery puzzle board game! Achieved 5th Most Fun and 10th Best Overall out of 
-            over 1000 participants in Brackeys Game Jam 2023." 
-            imageURL1="ouroboros1.png"
-            imageURL2="ouroboros2.png"
-            whatitis="PLATFORMER"
-            datestart="Feb 2023">
           </ProjectCard>
 
           <ProjectCard
