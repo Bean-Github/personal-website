@@ -16,6 +16,14 @@
 }
 
 @font-face {
+  font-family: Neutraface-Light;
+  font-style: light;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("../src/assets/Neutraface/Neutraface\ Text\ Light.otf") format("opentype");
+}
+
+@font-face {
   font-family: Neutraface-Italic-Light;
   font-style: italic;
   font-weight: 200 700;
@@ -55,6 +63,8 @@
   --font-neutraface: Neutraface, sans-serif;
   --font-neutraface-demi: Neutraface-Demi, sans-serif;
   --font-neutraface-italic-light: Neutraface-Italic-Light, sans-serif;
+
+  --font-neutraface-light: Neutraface-Light, sans-serif;
 
   --font-proxima-nova: Proxima-Nova, sans-serif;
 }

@@ -31,14 +31,14 @@ interface BioProps {
 function Intro()
 {
     return (
-        <div className="font-neutraface-italic-light space-y-7 text-[16px] leading-7 transition-all duration-500 ease-in-out">
+        <div className="font-neutraface-light space-y-7 text-[16px] leading-7 transition-all duration-500 ease-in-out">
             <h2 className="text-[28px] text-whiteish font-neutraface-demi">
             Hi, my name is{" "}
             <span className="font-neutraface-bold">Kevin Wei</span>
             </h2>
 
             <p>
-            <span className="text-green-400">// About me</span> <br />
+            <span className="text-green-400 font-neutraface-italic-light">// About me</span> <br />
             I’m a sophomore at the{" "}
             <span className="text-orange-300">University of Pennsylvania</span>{" "}
             studying{" "}
@@ -47,13 +47,13 @@ function Intro()
             </p>
 
             <p>
-            <span className="text-green-400">// Hobbies</span> <br />
+            <span className="text-green-400 font-neutraface-italic-light">// Hobbies</span> <br />
             In my free time I enjoy playing trumpet, writing poems, making
             dumplings, and riding my bike to someplace I don’t understand.
             </p>
 
             <p>
-            <span className="text-green-400">// Favorite animal</span> <br />
+            <span className="text-green-400 font-neutraface-italic-light">// Favorite animal</span> <br />
             My favorite animal is a{" "}
             <span className="text-purple-300">penguin</span> :)
             </p>
@@ -117,18 +117,22 @@ const getBioText = (): string => {
       <br/> <br/>
       Some other fun things I added were god rays, underwater post-processing, bubble particles, and cookie-based caustics! `;
     case "clouds":
-      return `I wanted clouds that didn’t just look right, but *moved* right — light scattering, noise, and density. My clouds implement 
-      Henyey-Greenstein phase function (for forward scattering), absorbance, and light accumulation.`;
+      return `I wanted clouds that really looked like nature. I implemented light scattering, noise, and density. My clouds implement 
+      Henyey-Greenstein phase function (for forward scattering), absorbance, and light accumulation. <br/><br/>
+      
+      Also, I created a 3D Worley + fBM noise generation tool
+      that applies compute shaders to rapidly generate custom detailed 3D textures, which are read by the screen-space volumetric raymarcher. By using my own
+      3D textures, I can edit them in real time to scroll the clouds and change the weather dynamically! `;
     case "a-bear-game":
-      return `I enjoyed making the systems of this game! For example, you can take photos that save into your inventory as render textures. Additionally, when you take a photo, 
-      the image will save in your inventory as a render texture with a unique description! <br/> <br/>
+      return `I enjoyed creating the environment and systems of this game! For example, you can take photos that save into your inventory as render textures.
+      Additionally, when you take a photo, the image will save in your inventory as a render texture with a unique description! <br/> <br/>
       Here is a fun photo I took in the game:
       <img src="../images/abeargame6.png">
       </img>
       `;
     case "descent":
       return `Descent was a game I made in a semester with a group of friends. It's a snowboarding game that is able to detect your tricks and 
-      award you differently depending on how cool your trick was! Furthermore, the game is endless! With procedural terrain and tree generation, 
+      award you based on how cool your trick was! Furthermore, the game is endless! With procedural terrain and tree generation, 
       the fun never ends. We even added a sand biome region, where you can slide down sand dunes and avoid cacti! <br/><br/>
       One aspect I very much enjoyed was making the music for the game. I created the original score in MuseScore, complete with 
       two cellos, piano, harp, acoustic bass, and drum set. <br/><br/>
@@ -136,7 +140,7 @@ const getBioText = (): string => {
       <u><a href="https://kevinwei.itch.io/descent" target="_blank"> Descent </a></u>`;
     case "code:-purple":
       return `I made this character to explore the art of character design, from default blender cube to fully rigged humanoid. I learned a lot about 
-      propoortions, sculpting, retopologizing, texturing, rigging, and animating at an intricate level.`;
+      proportions, sculpting, retopologizing, texturing, rigging, and animating at an intricate level.`;
     case "tin-bucket":
       return `This animation was inspired by the poem Tin Bucket, by Jenny George. It employs an SDF morph technique I made with geometry nodes, which
       was used in the scene where a wooden hand transforms into a comb. The SDF morph utilizes scattered points that sample the mesh and calculates intersections.
@@ -168,21 +172,66 @@ const getBioText = (): string => {
       Play the game here: 
       <u><a href="https://kevinwei.itch.io/the-sky-of-the-sky" target="_blank"> the sky of the sky </a></u>`;
     case "cooking-with-rordon-gamsay":
-      return "Chaos in the kitchen! I wanted to turn stress into rhythm — a dance of timers, sizzles, and panic.";
+      return `A hazardous work culture! This game was a group project for a Halloween game jam, with the theme, Hazardous Environment. 
+      Race against time to cook a cheeseburger. Dodge Rordon's verbose attacks and create the correct burger order at the assembly station, 
+      then drop it off at the serving chute to win! <br/><br/>
+      Play the game here: 
+      <u><a href="https://kevinwei.itch.io/cooking-with-rordon-gamsay" target="_blank"> Cooking with Rordon Gamsay </a></u>
+      `;
     case "retro-flight":
-      return "Vaporwave horizons and endless neon plains — a flight through nostalgia that never lands.";
+      return `Zoom past vaporwave horizons and endless neon plains. This game uses a custom Perlin-noise terrain generator and a 
+      fun flight controller that I created! <br/><br/>
+      Play the game here: 
+      <u><a href="http://kevinwei.itch.io/retro-flight" target="_blank"> Retro Flight </a></u>
+      `;
     case "everybody-wants-just-one-more-day":
-      return "A father, a son, and a wish for one more sunrise. A game about regret, love, and letting go.";
+      return `A father, a son, and a wish for one more sunrise. A game about regret, love, and letting go. 
+      Explore a dark but comforting ocean landscape filled with mysterious artifacts. Clicking on these artifacts uncovers poems by various 
+      artists, focusing on the theme of fatherly love. Gradually learn about and overcome tragedy in this interactive experience. <br/><br/>
+      Play the game here: 
+      <u><a href="https://kevinwei.itch.io/everybody-wants-just-one-more-day" target="_blank"> Everybody Wants Just One More Day </a></u>
+      `;
     case "the-wei-to-the-white-house":
-      return "Satire and ambition in text form — where every choice has weight, and every word a consequence.";
+      return `Do you have what it takes to become the President of the United States? Choose wisely as you face tough decisions and journey to 
+      become the next U.S. President in this Oregon-Trail-like game! Manage your campaign money, support, and approval ratings as you encounter 
+      comical events and challenges! 
+      Are you able to gain the favor of the electoral college? <br/><br/>
+      Play the game here: 
+      <u><a href="https://kevinwei.itch.io/the-wei-to-the-white-house" target="_blank"> The Wei to the White House </a></u>
+      `;
     case "battle-turtle":
-      return "Absurdity meets determination — a turtle with a gun fighting for something simple: fun.";
+      return `Explore 7 unique regions in this oceanic top-down shooter! Play as a turtle with a strong back. Fight lobsters, crabs, and more 
+      with your gun, baseball bat, grappler hook, and explosive water balloons. 
+      <br/><br/>
+      Play the game here: 
+      <u><a href="https://kevinwei.itch.io/battle-turtle-2" target="_blank"> Battle Turtle </a></u>
+      `;
     case "bullet-disco":
-      return "Momentum, music, and mayhem — where every shot is a beat, and every beat is survival.";
+      return `Instead of holding a gun that shoots enemies, play as a bullet that shoots between guns! 
+      Play as a sharply dressed bullet that can blast everyone in your way. Jump into different guns for different abilities! The shotgun 
+      gives you a spread shot, while the sniper increases your range and speed. Inspired by John Wick and Hotline Miami's fast paced action and energy, 
+      find yourself craving the adrenaline rush of a Bullet Disco. I made this game for GMTK Game Jam in 48 hours with a friend.
+      <br/><br/>
+      Play the game here: 
+      <u><a href="https://kevinwei.itch.io/bullet-disco" target="_blank"> Bullet Disco </a></u>
+      `;
+
     case "ouroboros":
-      return "A puzzle that loops back on itself — about endings that feed beginnings, and motion that never stops.";
+      return `This was a game jam submission to Brackeys Game Jam 2023.1. We achieved 5th Most Fun, 7th Best Game Design, and 10th Best Overall.
+      You are an ouroboros who loves to eat your own tail! You also LOVE eating people! Traverse around barriers and eat snacks (civilians) 
+      on your journey to your own tail in this slithery top-down puzzle game. <br/><br/>
+      Play the game here: 
+      <u><a href="https://kevinwei.itch.io/ouroboros" target="_blank"> Ouroboros </a></u>
+      `;
     case "stronger-to-deader":
-      return "A twisted idea: strength through decay. It’s a puzzle about control, sacrifice, and irony.";
+      return `This was one of my first games, created for a game jam with my friend. Solve creative puzzles by controlling your own dead bodies! 
+      When you die, you spawn an elemental zombie. Dying by fire will spawn 
+      a fire zombie, and drowning will spawn a water zombie. 
+      You can then control that zombie to solve tasks. For example, the water zombie is able to dive deep and hit buttons. 
+      The fire zombie can go through fire.<br/><br/>
+      Play the game here: 
+      <u><a href="https://kevinwei.itch.io/stronger-to-dead-er" target="_blank"> Stronger To-Dead-er </a></u>
+      `;
     default:
       return "I build games and simulations that explore nature, art, and emotion through code.";
     }
@@ -265,7 +314,7 @@ const getBioText = (): string => {
 
       {/* Collapsible content */}
       <div
-        className={"px-10 py-7 font-neutraface-italic-light space-y-7 text-[16px] leading-7 transition-all ease-out duration-500 ease-in-out"}
+        className={"px-10 py-7 font-neutraface-light space-y-7 text-[16px] leading-7 transition-all ease-out duration-500 ease-in-out"}
       >
         {
             showIntro ? (
@@ -273,7 +322,7 @@ const getBioText = (): string => {
             ) :
             (
                 <p>
-                    <span className="text-green-400">// Project Info</span> <br />
+                    <span className="text-green-400 font-neutraface-italic-light">// Project Info</span> <br />
 
                     <span
                       dangerouslySetInnerHTML={{ __html: displayText }}
