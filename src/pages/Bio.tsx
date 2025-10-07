@@ -93,25 +93,80 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
 const getBioText = (): string => {
   switch (activeProject) {
     case "fluid-renderer":
-      return "When I first discovered SPH simulation, I was fascinated by how math could make something feel so alive.";
+      return `Fluid simulations are so fascinating! It's amazing to see algorithms generate realistic natural phenomena. 
+      My implementation simulates accurate light bouncing (reflection, refraction, and Fresnel effects) and incompressible 
+      (constant density) fluids.  <br/><br/> 
+      To simulate over 200,000 particles in realtime at 200+ FPS, I used a spatial hashing system 
+      where particles only interact with nearby particles (based on a 3D cell grid). In order to do this, I had to...
+      <br/>
+      &emsp; 1) convert particle positions into a hashed cell index, <br/>
+      &emsp; 2) generate a key bounded by the array size, <br/>
+      &emsp; 3) sort keys to arrange same keys next to each other, and then <br/>
+      &emsp; 4) use those keys to access all particles within a cell. <br/> <br/> 
+      The most challenging yet rewarding aspect was creating a way to sort hundreds of thousands of keys per frame. 
+      I decided on creating my own version of a parallel sorting algorithm called bitonic sort. <br/><br/>
+      My code base can be found here: <u><a href = "https://github.com/Bean-Github/Fluid-Renderer" target="_blank"> Fluid Renderer </a></u>`;
     case "flocks-of-fish":
-      return "Simulating life felt like painting motion. Each fish follows rules, but the result is unpredictable — like nature itself.";
+      return `Each fish/flocking agent follows three simple rules: Separation, avoid nearby boids by steering away
+      heavily from very close neighbors. Alignment, match velocity gradually with nearby neighbors. Cohesion, move towards the center of mass or
+      average position of neighbors, keeping groups together. In order to simulate thousands of fish, I used GPU-acceleration. Seeing complex
+      realistic behavior emerge from simple rules was amazing. <br/> <br/>
+      I modeled all assets in Blender, such as fish, coral, submarines, and whales. Furthermore, I used an A Short Hike-inspired terrain shader
+      coded in HLSL, which allowed me to create toon-like terrain painting. The shader automatically renders 
+      cliff rock formations at sharp terrain height changes, allowing me to easily create terrain with Unity's terrain editor.
+      <br/> <br/>
+      Some other fun things I added were god rays, underwater post-processing, bubble particles, and cookie-based caustics! `;
     case "clouds":
-      return "I wanted clouds that didn’t just look right, but *moved* right — light scattering, noise, and density as art.";
+      return `I wanted clouds that didn’t just look right, but *moved* right — light scattering, noise, and density. My clouds implement 
+      Henyey-Greenstein phase function (for forward scattering), absorbance, and light accumulation.`;
     case "a-bear-game":
-      return "A cozy world of sunlight and laughter — a place where even a bear can dream beyond the forest.";
+      return `I enjoyed making the systems of this game! For example, you can take photos that save into your inventory as render textures. Additionally, when you take a photo, 
+      the image will save in your inventory as a render texture with a unique description! <br/> <br/>
+      Here is a fun photo I took in the game:
+      <img src="../images/abeargame6.png">
+      </img>
+      `;
     case "descent":
-      return "Falling feels freeing until it doesn’t. ‘Descent’ became a study in speed, balance, and control.";
+      return `Descent was a game I made in a semester with a group of friends. It's a snowboarding game that is able to detect your tricks and 
+      award you differently depending on how cool your trick was! Furthermore, the game is endless! With procedural terrain and tree generation, 
+      the fun never ends. We even added a sand biome region, where you can slide down sand dunes and avoid cacti! <br/><br/>
+      One aspect I very much enjoyed was making the music for the game. I created the original score in MuseScore, complete with 
+      two cellos, piano, harp, acoustic bass, and drum set. <br/><br/>
+      Play the full game here: 
+      <u><a href="https://kevinwei.itch.io/descent" target="_blank"> Descent </a></u>`;
     case "code:-purple":
-      return "Animation became rhythm here — smear frames, shape keys, and a heartbeat hidden in the movement.";
+      return `I made this character to explore the art of character design, from default blender cube to fully rigged humanoid. I learned a lot about 
+      propoortions, sculpting, retopologizing, texturing, rigging, and animating at an intricate level.`;
     case "tin-bucket":
-      return "An experiment in morphing form and feeling. Poetry in geometry — where shapes melt into memory.";
+      return `This animation was inspired by the poem Tin Bucket, by Jenny George. It employs an SDF morph technique I made with geometry nodes, which
+      was used in the scene where a wooden hand transforms into a comb. The SDF morph utilizes scattered points that sample the mesh and calculates intersections.
+      between them. A demo is shown on the right, where a blue monkey transforms into a red ring! <br/><br/>
+      I enjoyed visualizing one of my favorite poems, by a contemporary author. In fact, I sent the animation to the author over Instagram, 
+      and she thought it was cool! <br/><br/>
+      Watch the full video here: 
+      <u><a href="https://www.youtube.com/watch?v=_c-Dw7s28DE" target="_blank"> Tin Bucket </a></u>`;
     case "prism":
-      return "What if perception itself was the puzzle? Every color split became a new way to see the same truth.";
+      return `What if perception itself was the puzzle? I made this game with a group of friends for a game jam. The premise is that each character you control  
+      can perceive the world differently. For example, the red person can see and walk over a floating bridge that is invisible to the blue character. This system 
+      enables interesting puzzles where you must switch perspective and make your characters work together to solve it! <br/><br/>
+      Play the game here: 
+      <u><a href="https://kevinwei.itch.io/prism" target="_blank"> Prism </a></u>
+      `;
     case "a-game-of-chess":
-      return "Inspired by Eliot’s ‘The Waste Land.’ It’s a quiet game about futility, ritual, and the cycles that bind us.";
+      return `Inspired by T.S. Eliot’s post WWI poem, "The Waste Land." It references the section, "II. A Game of Chess", which features "Pressing lidless eyes" while
+      playing chess. I wanted to subvert the expected nature of chess by making you play against yourself. 
+      You are forced to go through the motions without someone else moving with you, stepping in the same direction, and wordlessly flowing together. 
+      I think playing chess by yourself captures the mood of the two characters’ one-sided relationship as well as the man’s empty thoughts. <br/><br/>
+      Play the game here: 
+      <u><a href="https://kevinwei.itch.io/a-game-of-chess-from-the-wasteland" target="_blank"> A Game of Chess </a></u>`;
     case "the-sky-of-the-sky":
-      return "A love story between warmth and cold — where opposites exchange color, memory, and light.";
+      return `A love story between warmth and cold where opposites attract. I made this romantic game for a Valentine's day game jam with a 
+      small group of friends. The story references the poem "[i carry your heart with me(i carry it in]" by e. e. cummings. I was reminded of that poem 
+      because my high school English teacher really liked that poem, and it is very sweet. <br/><br/>
+      I enjoyed recreating scenes from the poem and creating the game's 
+      art direction, from gradient noise shaders to imprintable snow to vast gardens full of flowers. <br/><br/>
+      Play the game here: 
+      <u><a href="https://kevinwei.itch.io/the-sky-of-the-sky" target="_blank"> the sky of the sky </a></u>`;
     case "cooking-with-rordon-gamsay":
       return "Chaos in the kitchen! I wanted to turn stress into rhythm — a dance of timers, sizzles, and panic.";
     case "retro-flight":
@@ -143,15 +198,16 @@ const getBioText = (): string => {
     setStartTyping(true);
 
     let i = 0;
-    let typeSpeed = 20;
+    let typeSpeed = 5;
     const interval = setInterval(() => {
       setDisplayText(textRef.current.slice(0, i));
-      i++;
+      i+=2;
       if (i > textRef.current.length) {
         clearInterval(interval);
         setIsTyping(false);
+        setStartTyping(false);
       }
-      if (i > 400 / typeSpeed)
+      if (i > 500 / typeSpeed)
       {
         setStartTyping(false); 
       }
@@ -218,7 +274,10 @@ const getBioText = (): string => {
             (
                 <p>
                     <span className="text-green-400">// Project Info</span> <br />
-                    {displayText}
+
+                    <span
+                      dangerouslySetInnerHTML={{ __html: displayText }}
+                    />
                 </p>
             )
         }

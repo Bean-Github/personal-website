@@ -14,7 +14,7 @@ function ProjectPreviews() {
         {/* Project previews */}
           <ProjectCard
             title="Fluid Renderer"
-            description="Realtime Newtonian fluid simulation based on the Smoothed Particle Hydrodynamics model and Navier-Stokes equations. Rendered with physically-based volumetric raymarching techniques (accurate light bouncing: reflection, refraction, and Fresnel effects)."
+            description="Realtime Newtonian fluid simulation based on the Smoothed Particle Hydrodynamics model and Navier-Stokes equations. Rendered with physically-based raymarching techniques."
             imageURL1="fluidsim1.mp4"
             imageURL2="fluidsim3.mp4"
             whatitis="SIMULATION"
@@ -34,7 +34,7 @@ function ProjectPreviews() {
 
           <ProjectCard
             title="Clouds"
-            description="Soar through volumetric clouds! Using my custom GPU-accelerated 3D Worley + fBM noise generation tool, you can easily and rapidly generate 3D textures. These textures are then read by a density raymarcher to render clouds! Implements Henyey-Greenstein phase function (for forward scattering), absorbance, and light accumulation." 
+            description="Soar through volumetric clouds! Using my custom GPU-accelerated 3D Worley + fBM noise generation tool, you can easily and rapidly generate 3D textures. These textures are then read by a density raymarcher to render clouds!"
             imageURL1="clouds2.mp4"
             imageURL2="clouds1.png"
             whatitis="SIMULATION"
@@ -67,13 +67,13 @@ function ProjectPreviews() {
             description="A fully rigged character with  facial shape keys and stylized smear frames." 
             imageURL1="characterpurple3.mp4"
             imageURL2="characterpurple2.mp4"
-            whatitis="ANIMATION"
+            whatitis="CHARACTER"
             datestart="May 2025">
           </ProjectCard>
 
           <ProjectCard
             title="Tin Bucket"
-            description="An animated short film inspired by a poem. Utilizes a SDF morph technique I made with geometry nodes. All assets and animations made by me in Blender." 
+            description="An animated short film inspired by a poem. Employs an SDF morph technique I made with geometry nodes. All assets and animations made by me in Blender." 
             imageURL1="tinbucket1.mp4"
             imageURL2="tinbucket2.mp4"
             whatitis="ANIMATION"
@@ -284,7 +284,7 @@ void main() {
             </pre>
             </div>
 
-          <section className="z-100">
+          <section className="z-100 pb-[47vh]">
             <ProjectPreviews />
           </section>
 

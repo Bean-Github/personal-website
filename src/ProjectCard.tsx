@@ -58,7 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             className="aspect-[126/100] z-50"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 120 }}
-            onClick={() => setOpenImage("/images/" + imageURL2)}
+            onClick={() => setOpenImage("/images/" + imageURL1)}
           >
             {inView1 &&
               (imageURL1.endsWith(".mp4") ? (
