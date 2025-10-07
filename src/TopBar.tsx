@@ -7,7 +7,7 @@ function TopBar()
       <header className="bg-yellow-400 w-full fixed flex justify-between items-center p-3.5 h-[7vh] shadow-sm z-200">     
         {/* Header */}
         
-        <div className="flex items-center gap-6 font-neutraface-bold ml-[1vw]">
+        <div className="flex items-center gap-6 font-neutraface-bold pt-0.25 ml-[1vw]">
             <a href = "/">
               <img src="penguin mini.svg" className="w-14 h-14 translate-y-2 relative z-10"/>
             </a>
@@ -16,7 +16,7 @@ function TopBar()
               <span className="text-[24px] text-blackish">KEVIN WEI</span>
             </a>
         </div>
-
+        
         <nav className="flex gap-6 font-neutraface-italic text-blackish text-[15px] mr-[3vw]">
 
             {/* TODO */}
