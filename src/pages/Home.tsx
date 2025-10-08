@@ -71,7 +71,7 @@ function ProjectPreviews() {
             whatitis="PLATFORMER"
             datestart="Feb 2023">
           </ProjectCard>
-          
+
           <ProjectCard
             title="Code: Purple"
             description="A fully rigged character with  facial shape keys and stylized smear frames." 
@@ -243,12 +243,12 @@ function Home() {
               <img 
                 src="/penguin.svg" 
                 alt="Penguin Mascot" 
-                className="opacity-95 select-none absolute bottom-4 right-0 w-[1000px] transform hover:-translate-y-4 transition-transform duration-500" 
+                className="opacity-95 brightness-130 select-none absolute bottom-4 right-0 w-[1000px] transform hover:-translate-y-4 transition-transform duration-500" 
               />
             </div>
 
             {/* Optional: Faint code overlay */}
-            <pre className="absolute select-none -top-4 left-0 w-full h-full rotate-355 text-[10px] font-mono bg-gradient-to-tl from-green-200/5 to-green-200/30 bg-clip-text text-transparent pointer-events-none overflow-hidden">
+            <pre className="absolute select-none -top-4 left-0 w-full h-full rotate-355 text-[10px] font-mono bg-gradient-to-tl from-green-200/0 to-green-200/40 bg-clip-text text-transparent pointer-events-none overflow-hidden">
   {`#ifdef WELCOME_TO_MY_PORTFOLIO
 precision mediump float;
 #endif

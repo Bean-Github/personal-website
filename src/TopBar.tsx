@@ -9,14 +9,14 @@ function TopBar()
         
         <div className="flex items-center gap-6 font-neutraface-bold pt-0.25 ml-[1vw]">
             <a href = "/">
-              <img src="penguin mini.svg" className="w-14 h-14 translate-y-2 relative z-10"/>
+              <img src="penguin mini.svg" className="hover:rotate-355 w-14 h-14 translate-y-2 relative z-10"/>
             </a>
             
             <a href = "/">
               <span className="text-[24px] text-blackish">KEVIN WEI</span>
             </a>
         </div>
-        
+
         <nav className="flex gap-6 font-neutraface-italic text-blackish text-[15px] mr-[3vw]">
 
             {/* TODO */}
@@ -28,7 +28,7 @@ function TopBar()
               ABOUT
           </a> */}
 
-          <a href="https://kevinwei.itch.io/" className="hover:underline">
+          <a href="https://kevinwei.itch.io/" target="_blank" className="hover:underline">
               PROJECTS
           </a>
 
