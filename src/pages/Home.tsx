@@ -243,7 +243,7 @@ function Home() {
               <img 
                 src="/penguin.svg" 
                 alt="Penguin Mascot" 
-                className="opacity-95 brightness-130 select-none absolute bottom-4 right-0 w-[1000px] transform hover:-translate-y-4 transition-transform duration-500" 
+                className="opacity-80 brightness-170 select-none absolute bottom-4 right-0 w-[1000px] transform hover:-translate-y-4 transition-transform duration-500" 
               />
             </div>
 
