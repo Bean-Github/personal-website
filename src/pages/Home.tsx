@@ -27,7 +27,7 @@ function ProjectPreviews() {
             description="Explore the depths of a cartoon ocean! Swim with sharks, whales, and thousands of fishies in a 3D oceanic environment! The flocking simulation uses an optimized boids algorithm and supports realtime interactions with tens of thousands of fish." 
             imageURL1="boids1.mp4"
             imageURL2="boids2.mp4"
-            whatitis="SIMULATION"
+            whatitis="NATURE GAME"
             datestart="May 2025"
             dateend="Jun 2025">
           </ProjectCard>
@@ -47,7 +47,7 @@ function ProjectPreviews() {
             description="Play as a bear who does bear things, like fishing, catching bugs, and ... driving a car? In this cozy toon-shaded world you can talk to people, buy donuts, take pictures, and sail on a boat! Explore the open beaches, islands, cities, and forests." 
             imageURL1="abeargame2.mp4"
             imageURL2="abeargame3.mp4"
-            whatitis="EXPLORATION"
+            whatitis="EXPLORATION GAME"
             datestart="Dec 2024"
             dateend="Apr 2025">
           </ProjectCard>
@@ -68,7 +68,7 @@ function ProjectPreviews() {
             over 1000 participants in Brackeys Game Jam 2023." 
             imageURL1="ouroboros1.png"
             imageURL2="ouroboros2.png"
-            whatitis="PLATFORMER"
+            whatitis="PUZZLE GAME"
             datestart="Feb 2023">
           </ProjectCard>
 
@@ -150,7 +150,7 @@ function ProjectPreviews() {
             description="Do you have what it takes to become the President of the United States? Navigate the tricky waters of politics, manage your money and popularity, and win over voters in this text-based RPG!" 
             imageURL1="thumbnail_theweitothewhitehouse.png"
             imageURL2="theweitothewhitehouse1.png"
-            whatitis="TEXT BASED RPG"
+            whatitis="TEXT-BASED RPG"
             datestart="Mar 2024">
           </ProjectCard>
 

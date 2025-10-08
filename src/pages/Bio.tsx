@@ -140,7 +140,7 @@ const getBioText = (): string => {
       <u><a href="https://kevinwei.itch.io/descent" target="_blank"> Descent </a></u>`;
     case "code:-purple":
       return `I made this character to explore the art of character design, from default blender cube to fully rigged humanoid. I learned a lot about 
-      proportions, sculpting, retopologizing, texturing, rigging, and animating at an intricate level.`;
+      proportions, sculpting, retopologizing, texturing, rigging, and animating at an intricate level. `;
     case "tin-bucket":
       return `This animation was inspired by the poem Tin Bucket, by Jenny George. It employs an SDF morph technique I made with geometry nodes, which
       was used in the scene where a wooden hand transforms into a comb. The SDF morph utilizes scattered points that sample the mesh and calculates intersections.
