@@ -186,7 +186,10 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
       <u><a href="https://kevinwei.itch.io/prism" target="_blank"> Prism </a></u>
       `;
       case "a-game-of-chess":
-        return `Inspired by T.S. Eliot’s post WWI poem, "The Waste Land." It references the section, "II. A Game of Chess", which features "Pressing lidless eyes" while
+        return `I enjoyed making the tech driving this game's vibe. I modeled all assets: the face, the chess pieces, the candles, and the board! 
+        I also created custom fire effects, smoke, fog, and a normals/depth-based Sobel filter for edge outlining. I loved the process of polishing the game and 
+        bringing my vision to life! <br/><br/>
+        Inspired by T.S. Eliot’s post WWI poem, "The Waste Land." It references the section, "II. A Game of Chess", which features "Pressing lidless eyes" while
       playing chess. I wanted to subvert the expected nature of chess by making you play against yourself. 
       You are forced to go through the motions without someone else moving with you, stepping in the same direction, and wordlessly flowing together. 
       I think playing chess by yourself captures the mood of the two characters’ one-sided relationship as well as the man’s empty thoughts. <br/><br/>
