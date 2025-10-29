@@ -172,8 +172,8 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
       proportions, sculpting, retopologizing, texturing, rigging, and animating at an intricate level. `;
       case "tin-bucket":
         return `This animation was inspired by the poem Tin Bucket, by Jenny George. It employs an SDF morph technique I made with geometry nodes, which
-      was used in the scene where a wooden hand transforms into a comb. The SDF morph utilizes scattered points that sample the mesh and calculates intersections.
-      between them. A demo is shown on the right, where a blue monkey transforms into a red ring! <br/><br/>
+      was used in the scene where a wooden hand transforms into a comb. The SDF morph utilizes scattered points that sample the mesh and calculates intersections 
+      with the mesh. A demo is shown on the right, where a blue monkey transforms into a red ring! <br/><br/>
       I enjoyed visualizing one of my favorite poems, by a contemporary author. In fact, I sent the animation to the author over Instagram, 
       and she thought it was cool! <br/><br/>
       Watch the full video here: 
