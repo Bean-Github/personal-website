@@ -1,48 +1,50 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="penguinhead.png" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="penguinhead.png" />
 
-    <!-- <link rel="preload" href="/fonts/yourfont.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- <link rel="preload" href="/fonts/yourfont.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/ProximaNova-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/ProximaNova-Semibold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/ProximaNova-Bold.woff2" as="font" type="font/woff2" crossorigin>
      -->
-    <link rel="preload" href="/assets/Neutraface%20Text%20Bold-BfMlAeSP.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="data:application/octet-stream;base64,aW1wb3J0IHsgU3RyaWN0TW9kZSB9IGZyb20gJ3JlYWN0Jw0KaW1wb3J0IHsgY3JlYXRlUm9vdCB9IGZyb20gJ3JlYWN0LWRvbS9jbGllbnQnDQppbXBvcnQgJy4vaW5kZXguY3NzJw0KaW1wb3J0IEFwcCBmcm9tICcuL0FwcC50c3gnDQoNCmNyZWF0ZVJvb3QoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKSEpLnJlbmRlcigNCiAgPFN0cmljdE1vZGU+DQogICAgPEFwcCAvPg0KICA8L1N0cmljdE1vZGU+LA0KKQ0KDQoNCg0KDQoNCg0K" as="script">
-    <link rel="preload" href="/assets/Neutraface%20Text%20Book%20Italic-D1ExC3NP.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="/assets/Neutraface%20Text%20Demi-DldbyqHG.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="/assets/Neutraface%20Text%20Light-DXmZjGLc.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="/assets/proximanova_light-C77mwfk9.otf" as="font" type="font/otf" crossorigin>
-    <link rel="preload" href="/assets/Neutraface%20Text%20Light%20Italic-DO5zqLKd.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="/assets/Neutraface%20Text%20Bold-BfMlAeSP.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="data:application/octet-stream;base64,aW1wb3J0IHsgU3RyaWN0TW9kZSB9IGZyb20gJ3JlYWN0Jw0KaW1wb3J0IHsgY3JlYXRlUm9vdCB9IGZyb20gJ3JlYWN0LWRvbS9jbGllbnQnDQppbXBvcnQgJy4vaW5kZXguY3NzJw0KaW1wb3J0IEFwcCBmcm9tICcuL0FwcC50c3gnDQoNCmNyZWF0ZVJvb3QoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3Jvb3QnKSEpLnJlbmRlcigNCiAgPFN0cmljdE1vZGU+DQogICAgPEFwcCAvPg0KICA8L1N0cmljdE1vZGU+LA0KKQ0KDQoNCg0KDQoNCg0K" as="script">
+  <link rel="preload" href="/assets/Neutraface%20Text%20Book%20Italic-D1ExC3NP.otf" as="font" type="font/otf"
+    crossorigin>
+  <link rel="preload" href="/assets/Neutraface%20Text%20Demi-DldbyqHG.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="/assets/Neutraface%20Text%20Light-DXmZjGLc.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="/assets/proximanova_light-C77mwfk9.otf" as="font" type="font/otf" crossorigin>
+  <link rel="preload" href="/assets/Neutraface%20Text%20Light%20Italic-DO5zqLKd.otf" as="font" type="font/otf"
+    crossorigin>
 
 
+  <!-- Open Graph (for Discord, Facebook, Slack, etc.) -->
+  <meta property="og:title" content="Kevin Wei // Developer & Designer" />
+  <meta property="og:description" content="Hi! My name is Kevin. I like making things." />
+  <meta property="og:url" content="https://kevwei.com/" />
+  <meta property="og:image" content="https://kevwei.com/preview.jpg" />
+  <meta property="og:type" content="website" />
 
-    <!-- Open Graph (for Discord, Facebook, Slack, etc.) -->
-    <meta property="og:title" content="Kevin Wei // Developer & Designer" />
-    <meta property="og:description" content="Hi! My name is Kevin. I like making things." />
-    <meta property="og:url" content="https://kevwei.com/" />
-    <meta property="og:image" content="https://kevwei.com/preview.jpg" />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Card (for Twitter/X) -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Kevin Wei // Developer & Designer" />
-    <meta name="twitter:description" content="Hi! My name is Kevin. I like making things." />
-    <meta name="twitter:image" content="https://kevwei.com/preview.jpg" />
+  <!-- Twitter Card (for Twitter/X) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kevin Wei // Developer & Designer" />
+  <meta name="twitter:description" content="Hi! My name is Kevin. I like making things." />
+  <meta name="twitter:image" content="https://kevwei.com/preview.jpg" />
 
 
-    <title>Kevin Wei  //  Portfolio</title>
-    
-    <script type="module" crossorigin src="/assets/index-BHEJ_-TE.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-9JaqPnbk.css">
-  </head>
+  <title>Kevin Wei // Portfolio</title>
 
-  <body>
-    <div id="root"></div>
-  </body>
-  
+  <script type="module" crossorigin src="/assets/index-Dx2J5zPY.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CxZ-qUtf.css">
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
 </html>
