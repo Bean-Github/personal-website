@@ -1,13 +1,13 @@
 
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Routes,
     Route,
 } from "react-router-dom";
 
 import Home from "./pages/Home.tsx"
 import About from "./pages/About.tsx"
-import Poetry from "./pages/Poetry.tsx"
+import Poetry from "./pages/poetry.tsx"
 import Projects from "./pages/Projects.tsx"
 
 function App()
@@ -17,8 +17,8 @@ function App()
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
+            {/* <Route path="/about" element={<About />} /> */}
+            {/* <Route path="/projects" element={<Projects />} /> */}
             <Route path="/poetry" element={<Poetry />} />
 
           </Routes>

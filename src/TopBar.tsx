@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 function TopBar()
@@ -35,13 +36,13 @@ function TopBar()
               ABOUT
           </a> */}
 
-          <a href="https://kevinwei.itch.io/" target="_blank" className="hover:underline">
+          <Link to="https://kevinwei.itch.io/" target="_blank" className="hover:underline">
               PROJECTS
-          </a>
+          </Link>
 
-          <a href="/poetry" className="hover:underline">
+          <Link to="/poetry" className="hover:underline">
               POETRY
-          </a>
+          </Link>
 
           <a href="Resume - Kevin Wei.pdf" className="hover:underline" target="_blank">RESUME</a>
 

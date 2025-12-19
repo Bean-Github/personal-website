@@ -25,7 +25,7 @@ function Poetry() {
       <TopBar />
 
       <main className="max-w-2xl mx-auto px-8 py-20">
-        <header className="mb-16 mt-10">
+        <header className="mb-10 mt-12">
           <h1 className="font-proxima-nova text-sm uppercase tracking-[0.2em] opacity-50">poems</h1>
         </header>
 
