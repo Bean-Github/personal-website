@@ -121,6 +121,20 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
 
   const getBioText = (): string => {
     switch (activeProject) {
+      case "space-minecraft":
+        return `Minecraft but in space! Place blocks on Saturn's rings, explore the procedural Earth, 
+        roam through the Sun's blazing hot atmosphere. I made this game with a team of 2 other friends. 
+        We built it entirely from scratch with C++, Qt Creator, and OpenGL. <br/><br/> 
+        I derived a mapping converting generic flat 2D Minecraft terrain to a 3D cube-sphere. This enabled
+        generation of smooth, round planets of Minecraft-like blocks! <br/><br/>
+        I created a volumetric atmosphere shader, which simulates realistic light scattering against air particles. 
+        This shader uses Rayleigh and Mie scattering to create the blue skies and orange sunsets. This let us
+        have real, simulated day-night cycles based on how atmosphere and ozone layers interact with the Sun you are orbiting around! <br/><br/>
+        Additionally, I created a custom Level of Detail (LOD) system based on Quadtree compression. These LODs are essentially 
+        simpler versions of terrain. They offered a 40x performance increase, allowing us to render entire planets made of 
+        millions of blocks at high framerate. <br/><br/>
+        Finally, I implemented gravitational physics, allowing planets to orbit. To attach players to their current planet, I 
+        matched player velocity to planet surface velocity. <br/><br/>`;
       case "fluid-renderer":
         return `Fluid simulations are so fascinating! It's amazing to see algorithms generate realistic natural phenomena. 
       My implementation simulates accurate light bouncing (reflection, refraction, and Fresnel effects) and incompressible 
@@ -349,9 +363,19 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
 
       {/* Collapsible content */}
       <div
-        className={
-          "px-10 py-7 font-neutraface-light space-y-7 text-[16px] leading-7 transition-all ease-out duration-500 ease-in-out"
-        }
+        className="
+          px-10 py-7
+          font-neutraface-light
+          space-y-7
+          text-[16px]
+          leading-7
+          transition-all
+          duration-500
+          ease-in-out
+          max-h-[65vh]
+          overflow-y-auto
+          no-scrollbar
+        "
       >
         {showIntro ? (
           <Intro />

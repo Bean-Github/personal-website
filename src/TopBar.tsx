@@ -6,16 +6,23 @@ function TopBar()
     return (
       <header className="bg-yellow-400 w-full fixed flex justify-between items-center p-3.5 h-[7vh] shadow-sm z-200">     
         {/* Header */}
-        
-        <div className="flex items-center gap-6 font-neutraface-bold pt-0.25 ml-[1vw]">
-            <a href = "/">
-              <img src="penguin mini.svg" className="hover:rotate-355 w-14 h-14 translate-y-2 relative z-10"/>
-            </a>
-            
-            <a href = "/">
-              <span className="text-[24px] text-blackish">KEVIN WEI</span>
-            </a>
-        </div>
+
+        {/* Container for Logo + Name */}
+      <div className="flex items-center ml-[1vw]">
+        {/* Added 'group' class to the parent anchor */}
+        <a href="/" className="group flex items-center gap-6 font-neutraface-bold pt-0.25">
+          {/* Changed 'hover:rotate-355' 
+            to 'group-hover:rotate-355' 
+          */}
+          <img 
+            src="penguin mini.svg" 
+            className="w-14 h-14 translate-y-2 relative z-10 transition-transform duration-300 group-hover:rotate-[-10deg]"
+            alt="Logo"
+          />
+          
+          <span className="text-[24px] text-blackish">KEVIN WEI</span>
+        </a>
+      </div>
 
         <nav className="flex gap-6 font-neutraface-italic text-blackish text-[15px] mr-[3vw]">
 
@@ -32,9 +39,9 @@ function TopBar()
               PROJECTS
           </a>
 
-          {/* <a href="/art" className="hover:underline">
-              ART
-          </a> */}
+          <a href="/poetry" className="hover:underline">
+              POETRY
+          </a>
 
           <a href="Resume - Kevin Wei.pdf" className="hover:underline" target="_blank">RESUME</a>
 

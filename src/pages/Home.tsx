@@ -12,11 +12,23 @@ function ProjectPreviews() {
     <div>
       {/* Project previews */}
       <ProjectCard
+        title="Space Minecraft"
+        description="Minecraft but in space! Place blocks on Saturn's rings, explore the procedural Earth, roam through the Sun's blazing hot atmosphere."
+        imageURL1="spaceminecraft1.mp4"
+        imageURL2="spaceminecraft2.mp4"
+        whatitis="MINECRAFT BUT SPACE"
+        tools="C++, OpenGL, Qt Creator"
+        datestart="Nov 2025"
+        dateend="Dec 2025"
+      ></ProjectCard>
+
+      <ProjectCard
         title="Fluid Renderer"
         description="Realtime Newtonian fluid simulation based on the Smoothed Particle Hydrodynamics model and Navier-Stokes equations. Rendered with physically-based raymarching techniques."
         imageURL1="fluidsim1.mp4"
         imageURL2="fluidsim3.mp4"
         whatitis="SIMULATION"
+        tools="Unity, C#, HLSL, Compute Shaders"
         datestart="Jun 2025"
         dateend="Aug 2025"
       ></ProjectCard>
@@ -27,6 +39,7 @@ function ProjectPreviews() {
         imageURL1="boids1.mp4"
         imageURL2="boids2.mp4"
         whatitis="NATURE GAME"
+        tools="Unity, C#, HLSL, Compute Shaders"
         datestart="May 2025"
         dateend="Jun 2025"
       ></ProjectCard>
@@ -37,6 +50,7 @@ function ProjectPreviews() {
         imageURL1="clouds2.mp4"
         imageURL2="clouds1.png"
         whatitis="SIMULATION"
+        tools="Unity, C#, HLSL, Compute Shaders"
         datestart="Apr 2025"
         dateend="May 2025"
       ></ProjectCard>
@@ -47,6 +61,7 @@ function ProjectPreviews() {
         imageURL1="abeargame2.mp4"
         imageURL2="abeargame3.mp4"
         whatitis="EXPLORATION GAME"
+        tools="Unity, C#, Shader Graph, VFX Graph"
         datestart="Dec 2024"
         dateend="Apr 2025"
       ></ProjectCard>
@@ -57,6 +72,7 @@ function ProjectPreviews() {
         imageURL1="thumbnail_descent.png"
         imageURL2="descent2.mp4"
         whatitis="ACTION GAME"
+        tools="Unity, C#"
         datestart="Aug 2024"
         dateend="Nov 2024"
       ></ProjectCard>
@@ -67,6 +83,7 @@ function ProjectPreviews() {
             over 1000 participants in Brackeys Game Jam 2023."
         imageURL1="ouroboros1.png"
         imageURL2="ouroboros2.png"
+        tools="Unity, C#"
         whatitis="PUZZLE GAME"
         datestart="Feb 2023"
       ></ProjectCard>
@@ -77,6 +94,7 @@ function ProjectPreviews() {
         imageURL1="characterpurple3.mp4"
         imageURL2="characterpurple2.mp4"
         whatitis="CHARACTER"
+        tools="Blender"
         datestart="May 2025"
       ></ProjectCard>
 
@@ -86,6 +104,7 @@ function ProjectPreviews() {
         imageURL1="thumbnail_agameofchess.png"
         imageURL2="agameofchess1.png"
         whatitis="POETRY GAME"
+        tools="Unity, C#, Shader Graph"
         datestart="Aug 2025"
       ></ProjectCard>
 
@@ -96,6 +115,7 @@ function ProjectPreviews() {
         imageURL2="tinbucket2.mp4"
         whatitis="ANIMATION"
         datestart="Mar 2025"
+        tools="Blender"
         dateend="Apr 2025"
       ></ProjectCard>
 
@@ -105,6 +125,7 @@ function ProjectPreviews() {
         imageURL1="thumbnail_prism.png"
         imageURL2="prism1.png"
         whatitis="PUZZLE GAME"
+        tools="Unity, C#"
         datestart="Mar 2025"
       ></ProjectCard>
 
@@ -114,6 +135,7 @@ function ProjectPreviews() {
         imageURL1="thumbnail_theskyofthesky.png"
         imageURL2="theskyofthesky1.png"
         whatitis="POETRY GAME"
+        tools="Unity, C#"
         datestart="Feb 2025"
       ></ProjectCard>
 
@@ -123,6 +145,7 @@ function ProjectPreviews() {
         imageURL1="thumbnail_cookingwithrordongamsay.png"
         imageURL2="cookingwithrordongamsay1.png"
         whatitis="PLATFORMER"
+        tools="Unity, C#"
         datestart="Oct 2024"
       ></ProjectCard>
 
@@ -132,6 +155,7 @@ function ProjectPreviews() {
         imageURL1="thumbnail_retroflight.png"
         imageURL2="retroflight1.png"
         whatitis="FLIGHT GAME"
+        tools="Unity, C#"
         datestart="Aug 2024"
       ></ProjectCard>
 
@@ -141,6 +165,7 @@ function ProjectPreviews() {
         imageURL1="thumbnail_everybodywantsjustonemoreday.png"
         imageURL2="everybodywantsjustonemoreday2.png"
         whatitis="POETRY GAME"
+        tools="Unity, C#"
         datestart="Apr 2024"
       ></ProjectCard>
 
@@ -150,6 +175,7 @@ function ProjectPreviews() {
         imageURL1="thumbnail_theweitothewhitehouse.png"
         imageURL2="theweitothewhitehouse1.png"
         whatitis="TEXT-BASED RPG"
+        tools="Unity, C#"
         datestart="Mar 2024"
       ></ProjectCard>
 
@@ -158,7 +184,8 @@ function ProjectPreviews() {
         description="Play as a turtle with a gun fighting against mafia sharks, evil pufferfish, sliding penguins, and a giant kraken!"
         imageURL1="thumbnail_battleturtle.png"
         imageURL2="battleturtle1.png"
-        whatitis="METROIDVANIA"
+        whatitis="OPEN-WORLD ACTION RPG"
+        tools="Unity, C#"
         datestart="May 2023"
         dateend="Sep 2023"
       ></ProjectCard>
@@ -169,6 +196,7 @@ function ProjectPreviews() {
         imageURL1="thumbnail_bulletdisco.png"
         imageURL2="bulletdisco2.png"
         whatitis="ACTION GAME"
+        tools="Unity, C#"
         datestart="Jul 2023"
       ></ProjectCard>
 
@@ -178,6 +206,7 @@ function ProjectPreviews() {
         imageURL1="thumbnail_strongertodeader.png"
         imageURL2="strongertodeader1.png"
         whatitis="PUZZLE PLATFORMER"
+        tools="Unity, C#"
         datestart="Feb 2021"
       ></ProjectCard>
     </div>
@@ -303,7 +332,7 @@ void main() {
             />
           </div>
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#fefff0]/100 via-[white]/25 to-white/0 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#fefff0]/100 via-[white]/30 to-white/10 pointer-events-none"></div>
         </section>
       </main>
 

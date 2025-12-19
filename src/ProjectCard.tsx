@@ -6,6 +6,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   whatitis?: string;
+  tools?: string;
   datestart?: string;
   dateend?: string;
   imageURL1: string;
@@ -20,6 +21,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   whatitis,
+  tools,
   datestart,
   dateend,
   imageURL1,
@@ -112,7 +114,24 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* Info */}
         <div className="mt-4 text-sm text-blackish">
           <div className="flex justify-between items-center mb-2">
-            <h2 className="font-neutraface-bold text-[20px] mb-2  z-50 opacity-80">{title}</h2>
+              <div className="z-50">
+                <h2 className="font-neutraface-bold text-[20px] mb-[-1px] opacity-80">
+                  {title}
+                </h2>
+
+                {tools && (
+                  <div className="text-[10px] text-gray-500 opacity-80">
+                    {tools}
+                  </div>
+                )}
+              </div>
+
+            {/* <h2 className="font-neutraface-bold text-[20px] mb-2  z-50 opacity-80">{title}</h2>
+            {tools && (
+              <div className="text-[10px] text-gray-500 z-50 opacity-80">
+                {tools}
+              </div>
+            )} */}
 
             {(whatitis || datestart || dateend) && (
               <div className="text-right  z-50 opacity-80">
