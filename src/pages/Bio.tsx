@@ -124,21 +124,33 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
       case "space-minecraft":
         return `Minecraft but in space! Place blocks on Saturn's rings, explore the procedural Earth, 
         roam through the Sun's blazing hot atmosphere. I made this game with a team of 2 other friends. 
-        We built it entirely from scratch with C++, Qt Creator, and OpenGL. <br/><br/> 
-        I derived a mapping converting generic flat 2D Minecraft terrain to a 3D cube-sphere. This enabled
+        We built it entirely from scratch with C++, GLSL and OpenGL. <br/><br/> 
+        I derived a mapping converting generic flat 2D Minecraft terrain into a 3D cube-sphere. This enabled
         generation of smooth, round planets of Minecraft-like blocks! <br/><br/>
         I created a volumetric atmosphere shader, which simulates realistic light scattering against air particles. 
         This shader uses Rayleigh and Mie scattering to create the blue skies and orange sunsets. This let us
-        have real, simulated day-night cycles based on how atmosphere and ozone layers interact with the Sun you are orbiting around! <br/><br/>
-        Additionally, I created a custom Level of Detail (LOD) system based on Quadtree compression. These LODs are essentially 
-        simpler versions of terrain. They offered a 40x performance increase, allowing us to render entire planets made of 
+        have real, simulated day-night cycles based on how atmosphere and ozone layers interact with the Sun 
+        you are orbiting around! <br/><br/>
+        Additionally, I created a custom Level of Detail (LOD) system based on Quadtree compression, which offered a 40x performance increase! 
+        The LODs are essentially simpler versions of terrain, allowing us to render entire planets made of 
         millions of blocks at high framerate. <br/><br/>
+        I also created the deferred rendering pipeline from scratch, complete with screen-space ambient occlusion (SSAO), 
+        additional light sources such as the volumetric flashlight, and other effects! <br/><br/>
         Finally, I implemented gravitational physics, allowing planets to orbit. To attach players to their current planet, I 
         matched player velocity to planet surface velocity. <br/><br/>`;
-      case "fluid-renderer":
+      case "real-time-fluid-renderer":
         return `Fluid simulations are so fascinating! It's amazing to see algorithms generate realistic natural phenomena. 
-      My implementation simulates accurate light bouncing (reflection, refraction, and Fresnel effects) and incompressible 
-      (constant density) fluids.  <br/><br/> 
+      I based pressure, viscosity, and other forces on the
+      Navier-Stokes equations and incompressible (constant density) fluids. For optimization, each particle
+      represents a smooth density of fluid. This method is known as 
+      Smoothed Particle Hydrodynamics (SPH), where each particle's properties are smoothed over a radius 
+      using kernel functions. <br/><br/>
+      I implemented several kernel functions, such as Poly6 and Poly3 and alternated based on particle influence distance (near 
+      vs far). <br/><br/>
+      Then, I baked the simulation into a 3D density 
+      texture, which can be read by a raymarcher that simulates physically-accurate 
+      light bouncing (reflection, refraction, and Fresnel effects). All these implementations are accelerated
+      by the GPU with compute shaders. <br/><br/> 
       To simulate over 200,000 particles in realtime at 200+ FPS, I used a spatial hashing system 
       where particles only interact with nearby particles (based on a 3D cell grid). In order to do this, I had to...
       <br/>
@@ -147,7 +159,8 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
       &emsp; 3) sort keys to arrange same keys next to each other, and then <br/>
       &emsp; 4) use those keys to access all particles within a cell. <br/> <br/> 
       The most challenging yet rewarding aspect was creating a way to sort hundreds of thousands of keys per frame. 
-      I decided on creating my own version of a parallel sorting algorithm called bitonic sort. <br/><br/>
+      I decided on creating my own version of a parallel sorting algorithm that can run on 
+      the GPU called bitonic sort. <br/><br/>
       My code base can be found here: <u><a href = "https://github.com/Bean-Github/Fluid-Renderer" target="_blank"> Fluid Renderer </a></u>`;
       case "flocks-of-fish":
         return `Each fish/flocking agent follows three simple rules: Separation, avoid nearby boids by steering away

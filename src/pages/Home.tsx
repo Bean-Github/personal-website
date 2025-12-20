@@ -17,13 +17,13 @@ function ProjectPreviews() {
         imageURL1="spaceminecraft1.mp4"
         imageURL2="spaceminecraft2.mp4"
         whatitis="MINECRAFT BUT SPACE"
-        tools="C++, OpenGL, Qt Creator"
+        tools="C++, GLSL, OpenGL, Qt Creator"
         datestart="Nov 2025"
         dateend="Dec 2025"
       ></ProjectCard>
 
       <ProjectCard
-        title="Fluid Renderer"
+        title="Real-time Fluid Renderer"
         description="Realtime Newtonian fluid simulation based on the Smoothed Particle Hydrodynamics model and Navier-Stokes equations. Rendered with physically-based raymarching techniques."
         imageURL1="fluidsim1.mp4"
         imageURL2="fluidsim3.mp4"
@@ -45,7 +45,7 @@ function ProjectPreviews() {
       ></ProjectCard>
 
       <ProjectCard
-        title="Clouds"
+        title="Volumetric Clouds"
         description="Soar through volumetric clouds! Using my custom GPU-accelerated 3D Worley + fBM noise generation tool, you can easily and rapidly generate 3D textures. These textures are then read by a density raymarcher to render clouds!"
         imageURL1="clouds2.mp4"
         imageURL2="clouds1.png"
