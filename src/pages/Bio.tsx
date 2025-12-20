@@ -172,7 +172,7 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
       cliff rock formations at sharp terrain height changes, allowing me to easily create terrain with Unity's terrain editor.
       <br/> <br/>
       Some other fun things I added were god rays, underwater post-processing, bubble particles, and cookie-based caustics! `;
-      case "clouds":
+      case "volumetric-clouds":
         return `I wanted clouds that really looked like nature. I implemented light scattering, noise, and density. My clouds implement 
       Henyey-Greenstein phase function (for forward scattering), absorbance, and light accumulation. <br/><br/>
       
