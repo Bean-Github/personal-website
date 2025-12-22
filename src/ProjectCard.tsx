@@ -142,12 +142,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="mt-4 text-sm text-blackish">
           <div className="flex justify-between items-center mb-2">
               <div className="z-50">
-                <h2 className="font-neutraface-bold text-[20px] mb-[-1px] opacity-80">
+                <h2 className={isMobile ?
+                  "font-neutraface-bold text-[16px] mb-[-1px] opacity-80" :
+                  "font-neutraface-bold text-[20px] mb-[-1px] opacity-80"}>
                   {title}
                 </h2>
 
                 {tools && (
-                  <div className="text-[10px] text-gray-500 opacity-80">
+                  <div className={
+                    isMobile ?
+                    "text-[9px] text-gray-500 opacity-80" :
+                    "text-[10px] text-gray-500 opacity-80"}>
                     {tools}
                   </div>
                 )}
@@ -156,19 +161,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             {(whatitis || datestart || dateend) && (
               <div className="text-right  z-50 opacity-80">
                 {whatitis && (
-                  <div className="font-neutraface-bold text-[12px] text-gray-700">
+                  <div className={
+                    isMobile ?
+                    "font-neutraface-bold text-[10px] text-gray-700" :
+                    "font-neutraface-bold text-[12px] text-gray-700"}>
                     {whatitis}
                   </div>
                 )}
                 {(datestart || dateend) && (
-                  <div className="text-[10px] text-gray-500">
+                  <div className={
+                    isMobile ?
+                    "text-[9px] text-gray-500 opacity-80" :
+                    "text-[10px] text-gray-500 opacity-80"}>
                     {datestart} {datestart && dateend && "–"} {dateend}
                   </div>
                 )}
               </div>
             )}
           </div>
-          <p className="font-proxima-nova z-50 relative opacity-70">{description}</p>
+          <p className={
+            isMobile ?
+            "font-proxima-nova text-[13px] z-50 relative opacity-70" :
+            "font-proxima-nova z-50 relative opacity-70"}>
+            {description}</p>
         </div>
       </div>
 

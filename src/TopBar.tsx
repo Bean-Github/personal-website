@@ -35,7 +35,7 @@ function TopBar()
       </div>
 
         <nav className={isMobile ? 
-          "flex gap-3 font-neutraface-italic text-blackish text-[0.75rem] mr-[3vw]" : 
+          "flex gap-3 font-neutraface-italic text-blackish text-[0.6rem] mr-[3vw]" : 
           "flex gap-8 font-neutraface-italic text-blackish text-[1rem] mr-[3vw]"
           }>
             {/* TODO */}

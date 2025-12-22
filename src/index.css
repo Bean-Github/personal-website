@@ -1,10 +1,9 @@
-
 @font-face {
   font-family: Neutraface-Bold;
   font-style: bold;
   font-weight: 200 700;
   font-display: swap;
-  src: url("../src/assets/Neutraface/Neutraface\ Text\ Bold.otf") format("opentype");
+  src: url("../src/assets/Neutraface/Neutraface\ Text\ Bold.woff2") format("opentype");
 }
 
 @font-face {
@@ -12,7 +11,7 @@
   font-style: italic;
   font-weight: 200 700;
   font-display: swap;
-  src: url("../src/assets/Neutraface/Neutraface\ Text\ Book\ Italic.otf") format("opentype");
+  src: url("../src/assets/Neutraface/Neutraface\ Text\ Book\ Italic.woff2") format("opentype");
 }
 
 @font-face {
@@ -20,7 +19,7 @@
   font-style: light;
   font-weight: 200 700;
   font-display: swap;
-  src: url("../src/assets/Neutraface/Neutraface\ Text\ Light.otf") format("opentype");
+  src: url("../src/assets/Neutraface/Neutraface\ Text\ Light.woff2") format("opentype");
 }
 
 @font-face {
@@ -28,7 +27,7 @@
   font-style: italic;
   font-weight: 200 700;
   font-display: swap;
-  src: url("../src/assets/Neutraface/Neutraface\ Text\ Light\ Italic.otf") format("opentype");
+  src: url("../src/assets/Neutraface/Neutraface\ Text\ Light\ Italic.woff2") format("opentype");
 }
 
 @font-face {
@@ -36,18 +35,18 @@
   font-style: light;
   font-weight: 200 700;
   font-display: swap;
-  src: url("../src/assets/Neutraface/Neutraface\ Text\ Light.otf") format("opentype");
+  src: url("../src/assets/Neutraface/Neutraface\ Text\ Light.woff2") format("opentype");
 }
 
 @font-face {
   font-family: Neutraface-Demi;
   font-weight: 200 700;
-  src: url("../src/assets/Neutraface/Neutraface\ Text\ Demi.otf");
+  src: url("../src/assets/Neutraface/Neutraface\ Text\ Demi.woff2");
 }
 
 @font-face {
   font-family: Proxima-Nova;
-  src: url("../src/assets/Proxima\ Nova/proximanova_light.otf") format("opentype");
+  src: url("../src/assets/Proxima\ Nova/proximanova_light.woff2") format("opentype");
 }
 
 @import "tailwindcss";
@@ -68,10 +67,12 @@
 
   --font-proxima-nova: Proxima-Nova, sans-serif;
 }
+
 @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
