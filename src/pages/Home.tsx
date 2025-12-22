@@ -249,10 +249,10 @@ function Home() {
       <TopBar />
 
       {/* Main content */}
-      <main className={isMobile ? "flex w-[80vw] py-15" : "flex flex-1 w-[85vw] px-12 py-15"}>
+      <main className={isMobile ? "w-full flex flex-1 justify-center py-15" : "flex flex-1 w-[85vw] px-12 py-15"}>
         {/* Left side stuff */}
         <section className={isMobile ? 
-        "w-[100%] py-2 ml-[12vw] mt-[11px] flex-col justify-start h-[83vh] mt-sm" : 
+        "w-[80vw] py-2 mt-[11px] flex-col justify-center h-[83vh] mt-sm" : 
           "w-[50%] pl-10 py-5 ml-[10vw] mt-[11px] flex-col justify-start pr-6 h-[83vh] mt-sm"}>
           {/* big card / video */}
           <div

@@ -25,17 +25,17 @@ function TopBar()
           <img 
             src="penguin mini.svg" 
             className={isMobile ? 
-              "w-12 h-12 translate-y-2 relative z-10 transition-transform duration-300 group-hover:rotate-[-10deg]" : 
+              "w-10 h-12 translate-y-2 relative z-10 transition-transform duration-300 group-hover:rotate-[-10deg]" : 
               "w-14 h-14 translate-y-2 relative z-10 transition-transform duration-300 group-hover:rotate-[-10deg]"}
             alt="Logo"
           />
           
-          <span className={isMobile ? "text-[1.25rem] text-blackish" : "text-[1.5rem] text-blackish"}>KEVIN WEI</span>
+          <span className={isMobile ? "text-[1.1rem] text-blackish" : "text-[1.5rem] text-blackish"}>KEVIN WEI</span>
         </a>
       </div>
 
         <nav className={isMobile ? 
-          "flex gap-3 font-neutraface-italic text-blackish text-[0.6rem] mr-[3vw]" : 
+          "flex gap-2 font-neutraface-italic text-blackish text-[0.55rem] mr-[1vw]" : 
           "flex gap-8 font-neutraface-italic text-blackish text-[1rem] mr-[3vw]"
           }>
             {/* TODO */}
