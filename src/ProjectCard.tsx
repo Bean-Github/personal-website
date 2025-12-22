@@ -31,6 +31,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   onClose
 
 }) => {
+  const isMobile = window.matchMedia("(any-pointer:coarse)").matches;
 
   //const [openImage, setOpenImage] = useState<string | null>(null);
 // Store both the URL and the current playback time
@@ -69,12 +70,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   return (
     <div
-      className={`project-card mb-14 ${className}`}
+      className= {isMobile ? `project-card mb-12 ${className}` : `project-card mb-14 ${className}`}
       data-project={title.toLowerCase().replace(/\s+/g, "-")}
       data-open={!!selectedMedia}
     >
       <div className="w-full">
-        <div className="grid grid-cols-2 gap-6 mb-6 justify-center">
+        <div className={isMobile ? "grid grid-cols-2 gap-3 mb-4 justify-center" :
+        "grid grid-cols-2 gap-6 mb-6 justify-center"}>
           {/* IMAGE 1 */}
           <motion.div
             ref={ref1}
@@ -213,7 +215,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
             {/* The Expanded Image/Video Container */}
             <motion.div
-              className="relative z-[260] max-w-[50%] max-h-[40%] pointer-events-auto flex items-center justify-center"
+              className={isMobile ? 
+                "relative z-[260] max-w-[80%] max-h-[40%] pointer-events-auto flex items-center justify-center" :
+                "relative z-[260] max-w-[50%] max-h-[40%] pointer-events-auto flex items-center justify-center"}
               variants={
                 {hidden: { opacity: 0, scale: 0.95 },
                 visible: { opacity: 1, scale: 1, transition: { duration: 0.2 } },

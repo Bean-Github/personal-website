@@ -218,6 +218,8 @@ function Home() {
   const [activeProject, setActiveProject] = useState<string | null>(null);
   const observer = useRef<IntersectionObserver | null>(null);
 
+  const isMobile = window.matchMedia("(any-pointer:coarse)").matches;
+
   useEffect(() => {
     const options: IntersectionObserverInit = {
       root: null,
@@ -247,28 +249,41 @@ function Home() {
       <TopBar />
 
       {/* Main content */}
-      <main className="flex flex-1 w-[85vw] px-12 py-15">
+      <main className={isMobile ? "flex w-[80vw] py-15" : "flex flex-1 w-[85vw] px-12 py-15"}>
         {/* Left side stuff */}
-        <section className="w-[50%] pl-10 py-5 ml-[10vw] mt-[11px] flex-col justify-start pr-6 h-[83vh] mt-sm">
+        <section className={isMobile ? 
+        "w-[100%] py-2 ml-[12vw] mt-[11px] flex-col justify-start h-[83vh] mt-sm" : 
+          "w-[50%] pl-10 py-5 ml-[10vw] mt-[11px] flex-col justify-start pr-6 h-[83vh] mt-sm"}>
           {/* big card / video */}
           <div
             id="games-portfolio"
-            className="z-100 relative bg-gradient-to-r font-proxima-nova mb-10 from-[#0f2027] via-[#0d252e] to-[#0a3044] rounded-2xl shadow-[0_0_5px] overflow-hidden h-[180px] flex items-center justify-between px-6 py-6 transition-all duration-300 ease-in-out"
+            className=
+            {isMobile ? 
+              "z-100 relative bg-gradient-to-r font-proxima-nova mb-12 from-[#0f2027] via-[#0d252e] to-[#0a3044] rounded-2xl shadow-[0_0_5px] overflow-hidden h-[120px] flex items-center justify-between px-3 py-3 transition-all duration-300 ease-in-out" :
+              "z-100 relative bg-gradient-to-r font-proxima-nova mb-12 from-[#0f2027] via-[#0d252e] to-[#0a3044] rounded-2xl shadow-[0_0_5px] overflow-hidden h-[180px] flex items-center justify-between px-6 py-6 transition-all duration-300 ease-in-out"
+            }
           >
             {/* Left: Text */}
-            <div className="flex flex-col ml-4 justify-center text-left">
-              <h1 className="text-3xl font-neutraface-bold text-white drop-shadow-[0_0_12px_white]">
+            <div className={isMobile ? 
+              "flex flex-col ml-4 justify-center text-left w-[100%]" :
+              "flex flex-col ml-4 justify-center text-left"}>
+              <h1 className=
+                {isMobile ? 
+                  "text-[1.1rem] font-neutraface-bold text-white drop-shadow-[0_0_12px_white]" :
+                  "text-3xl font-neutraface-bold text-white drop-shadow-[0_0_12px_white]"}>
                 <span className="text-white ">
                   {"< "}Games Portfolio{" />"}
                 </span>
               </h1>
-              <span className="mt-2 text-lg align-middle font-neutraface-italic text-gray-300">
+              <span className={isMobile ? 
+                "mt-1 text-[0.8rem] align-middle font-neutraface-italic text-gray-300" : 
+                "mt-2 text-lg align-middle font-neutraface-italic text-gray-300"}>
                 5+ years of game development
               </span>
             </div>
 
             {/* Right: Penguin */}
-            <div className="relative w-50 h-100">
+            <div className="relative w-50 h-100 ">
               <img
                 src="/penguin.svg"
                 alt="Penguin Mascot"
@@ -277,7 +292,9 @@ function Home() {
             </div>
 
             {/* Optional: Faint code overlay */}
-            <pre className="absolute select-none -top-4 left-0 w-full h-full rotate-355 text-[10px] font-mono bg-gradient-to-tl from-green-200/0 to-green-200/40 bg-clip-text text-transparent pointer-events-none overflow-hidden">
+            <pre className=
+            {isMobile ? "absolute select-none -top-4 left-0 w-full h-full rotate-355 text-[0.5rem] font-mono bg-gradient-to-tl from-green-200/0 to-green-200/40 bg-clip-text text-transparent pointer-events-none overflow-hidden" : 
+            "absolute select-none -top-4 left-0 w-full h-full rotate-355 text-[10px] font-mono bg-gradient-to-tl from-green-200/0 to-green-200/40 bg-clip-text text-transparent pointer-events-none overflow-hidden"}>
               {`#ifdef WELCOME_TO_MY_PORTFOLIO
 precision mediump float;
 #endif
@@ -320,6 +337,7 @@ void main() {
         </section>
 
         {/* Right side bio */}
+        {isMobile ? null : (
         <section className="py-5 ml-[3vh] mt-[10px] flex flex-col justify-start text-blackish mr-[7vw] z-10">
           <div className="fixed z-10 w-[35%]">
             <Bio activeProject={activeProject} />
@@ -335,6 +353,7 @@ void main() {
           {/* Gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#fefff0]/100 via-[white]/30 to-white/10 pointer-events-none"></div>
         </section>
+        )}
       </main>
 
       {/* Footer */}

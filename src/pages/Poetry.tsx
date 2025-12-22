@@ -20,16 +20,19 @@ const poems = [
 ];
 
 function Poetry() {
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <div className="min-h-screen bg-[#fafaf9] text-[#2c2c2c] font-serif">
       <TopBar />
 
       <main className="max-w-2xl mx-auto px-8 py-20">
-        <header className="mb-10 mt-12">
+        <header className={isMobile? "mb-12 mt-8" :
+          "mb-10 mt-12"}>
           <h1 className="font-proxima-nova text-sm uppercase tracking-[0.2em] opacity-50">poems</h1>
         </header>
 
-        <ul className="space-y-8">
+        <ul className={isMobile ? "space-y-4" : "space-y-8"}>
           {poems.map(poem => (
             <li key={poem.id} className="group">
               <a 
@@ -38,12 +41,16 @@ function Poetry() {
               >
                 <div className="flex flex-col gap-3">
                   {/* Poem Title */}
-                  <h2 className="text-2xl font-light italic transition-all duration-300 group-hover:pl-4">
+                  <h2 className={isMobile ? 
+                    "text-xl font-light italic transition-all duration-300 group-hover:pl-4" :
+                    "text-2xl font-light italic transition-all duration-300 group-hover:pl-4"}>
                     {poem.title}
                   </h2>
 
                   {/* Publisher and Date Metadata */}
-                  <span className="font-proxima-nova text-[10px] uppercase tracking-[0.15em] opacity-40 transition-all duration-300 group-hover:pl-4">
+                  <span className={isMobile ? 
+                    "font-proxima-nova text-[9px] uppercase tracking-[0.15em] opacity-40 transition-all duration-300 group-hover:pl-4":
+                    "font-proxima-nova text-[10px] uppercase tracking-[0.15em] opacity-40 transition-all duration-300 group-hover:pl-4"}>
                     {poem.publisher} — {poem.date}
                   </span>
                   
