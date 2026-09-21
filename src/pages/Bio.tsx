@@ -4,29 +4,6 @@ interface BioProps {
   activeProject: string | null;
 }
 
-// function Bio() {
-//   const getBioText = (): string => {
-//     switch (activeProject) {
-//       case "fluid":
-//         return "When I first discovered SPH simulation, I was fascinated by how math could make something feel so alive.";
-//       case "flocks":
-//         return "Simulating life felt like painting motion. Each fish follows rules, but the result is unpredictable — like nature itself.";
-//       case "clouds":
-//         return "I wanted clouds that didn’t just look right, but *moved* right — light scattering, noise, and density as art.";
-//       default:
-//         return "I build games and simulations that explore nature, art, and emotion through code.";
-//     }
-//   };
-
-//   return (
-//     <section className="shadow-xl rounded-lg bg-blackish text-whiteish p-10 transition-all duration-500 ease-in-out">
-//       <h2 className="text-[28px] font-neutraface-demi mb-4">Kevin Wei</h2>
-//       <p className="text-[16px] font-neutraface-italic-light leading-7 text-gray-200">
-//         {getBioText()}
-//       </p>
-//     </section>
-//   );
-// }
 
 function Intro() {
   return (
@@ -138,6 +115,83 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
         additional light sources such as the volumetric flashlight, and other effects! <br/><br/>
         Finally, I implemented gravitational physics, allowing planets to orbit. To attach players to their current planet, I 
         matched player velocity to planet surface velocity. <br/><br/>`;
+
+      case "moon-tycoon":
+      return `
+      <img src="../images/moontycoonlogo.jpg" className="w-[100%] mb-4"></img>
+
+      <br/>
+      With Moon Tycoon, engineers and researchers can explore and place equipment at any location on the Moon’s surface. 
+      The simulation will emulate the predicted rocky and cratered surface of the Moon to a high degree of accuracy and resolution. <br/><br/>
+      I also built systems to… <br/>
+      -> generate lunar surface detail <br/>
+      -> use real-time ephemeris data to calculate sun positions and local lighting conditions <br/>
+      -> select coordinates on a lunar globe and teleport there with accuracy to the meter <br/><br/>
+
+      I also optimized software framerate (FPS) by 3x and reduced loading time from 20 seconds to 2 seconds, and worked 
+      with NASA engineers to implement a new lunar Multi-Purpose Habitation module into the simulation. <br/><br/> 
+
+      Moon Tycoon will specifically support the Artemis project and future moon landings by enabling engineers to explore and 
+      place robots anywhere on the moon with extremely realistic detail. It focuses on the virtual testing of In-Situ Resource 
+      Utilization (ISRU) equipment such as rovers, drills, vehicles, landers, and lunar modules. The software’s visualization 
+      capabilities are especially relevant for the lunar south pole, the planned location of NASA's future Moon Base.<br/><br/>
+
+      See more here: <u><a href="https://www.nasa.gov/centers-and-facilities/kennedy/nasa-project-takes-off-with-new-3d-lunar-simulation/" 
+      target="_blank" rel="noopener noreferrer">NASA Project Takes off with New 3D Lunar Simulation</a></u>
+      `;
+
+      case "detention-bums":
+        return `
+        <img src="../images/detentionbumsthumbnail_1.png" className="w-[100%] mb-4"></img>
+
+        <br/>
+        This game achieved 25th Overall out of 3506 entries in Juniper Dev Game Jam! 
+        <br/><br/>
+        
+        I made this game with a friend in one week. I created the pen spinning mechanic, 
+        where you spin a pen in one hand. I made a custom pen spinning physics system
+        for angular velocity, quaternion poses, and smooth momentum. 
+        I designed many smooth spinning animations, allowing the player to transfer the pen
+        between fingers, spin it around the thumb, and charge between spins. 
+        <br/><br/>
+
+        I created a modular combo system inspired by Tony Hawk Pro Skater, where players can chain together tricks to 
+        earn multipliers and create unique appealing animations. Here's a sample of the moveset: 
+        <br/><br/>
+        <img src="../images/spinbook.png" className="w-[100%] mb-4"></img> <br/>
+
+        I also made the environment, toon shaders, models, visual effects, UI, dialogue, tutorial, and Teacher Joe's behavior AI.
+        <br/><br/>
+        
+        I had a lot of fun creating various
+        eccentric characters, such as Teacher Joe, Jude, and Lucas. It was also satisfying creating 
+        visual effects for the pen spinning, such as motion trails, particle effects, and camera shake.
+        <br/><br/>
+
+        Play the game here: <u><a href="https://itch.io/jam/theveryseriousjuniperdevgamejam/rate/4716866" target="_blank"> Detention Bums </a></u>
+        `
+
+      case "differential-growth-with-cell-differentiation":
+        return `I authored a novel mesh-based simulation of natural plant growth and flower development. 
+        The research project emulates physical and biological processes such as differential growth, cell differentiation, 
+        and the flow of auxin growth hormones to simulate the growth of branches, shoots, and leaves in real time. 
+
+        The base of the simulation is similar to a Smoothed Particle Hydrodynamics (SPH) fluid simulation, 
+        where particles influence and collide with each other using smoothed kernel functions. 
+        However, this simulation represents particles as plant cells, and each cell is connected using a 
+        half-edge mesh data structure. <br/><br/>
+
+        The project is also accelerated with spatial hashing and is highly optimized. 
+        It manages tens of thousands of plant cells in real time and parallelizes several complex processes such as 
+        edge splitting, edge flipping, turgor pressure, Laplacian smoothing, growth tensors, and self-collisions. <br/><br/>
+
+        I also created a custom node-based graph editor so users can easily visualize and create complex plant genotypes 
+        before running the simulation. <br/><br/>
+      
+        For more information, see the github here: <u><a href="https://github.com/Bean-Github/Differential-Growth-With-Cell-Types" 
+        target="_blank"> Differential Growth With Cell Types </a></u>      
+      `;
+
       case "real-time-fluid-renderer":
         return `Fluid simulations are so fascinating! It's amazing to see algorithms generate realistic natural phenomena. 
       I based pressure, viscosity, and other forces on the
@@ -162,6 +216,7 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
       I decided on creating my own version of a parallel sorting algorithm that can run on 
       the GPU called bitonic sort. <br/><br/>
       My code base can be found here: <u><a href = "https://github.com/Bean-Github/Fluid-Renderer" target="_blank"> Fluid Renderer </a></u>`;
+      
       case "flocks-of-fish":
         return `Each fish/flocking agent follows three simple rules: Separation, avoid nearby boids by steering away
       heavily from very close neighbors. Alignment, match velocity gradually with nearby neighbors. Cohesion, move towards the center of mass or
@@ -179,11 +234,27 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
       Also, I created a 3D Worley + fBM noise generation tool
       that applies compute shaders to rapidly generate custom detailed 3D textures, which are read by the screen-space volumetric raymarcher. By using my own
       3D textures, I can edit them in real time to scroll the clouds and change the weather dynamically! `;
+      
       case "a-bear-game":
-        return `I enjoyed creating the environment and systems of this game! For example, you can take photos that save into your inventory as render textures.
-      Additionally, when you take a photo, the image will save in your inventory as a render texture with a unique description! <br/> <br/>
-      Here is a fun photo I took in the game:
-      <img src="../images/abeargame6.png">
+        return `
+        I enjoyed creating the environment and systems of this game! I created all the stylized shaders in this game.
+        Here is an example of the interactive water and grass shaders I created. <br/> <br/>
+
+        <img src="../images/beargamereel3.gif">
+        </img> 
+        
+        <br/> <br/>
+
+        The water shader uses a combination of vertex displacement, depth, normal mapping, 
+        Fresnel effects, planar reflections, and ripple effects to create realistic water surfaces. 
+
+        <br/> <br/>
+
+        Some of the features I implemented include a photo system where you can take photos that save into your inventory as 
+        render textures.
+        Additionally, when you take a photo, the image will save with a unique description! <br/> <br/>
+        Here is a fun photo I took in the game:
+      <img src="../images/abeargame7.png">
       </img>
       `;
       case "descent":
@@ -292,7 +363,7 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
       <u><a href="https://kevinwei.itch.io/stronger-to-dead-er" target="_blank"> Stronger To-Dead-er </a></u>
       `;
       default:
-        return "I build games and simulations that explore nature, art, and emotion through code.";
+        return "I build games and simulations!";
     }
   };
 
@@ -306,10 +377,10 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
     setStartTyping(true);
 
     let i = 0;
-    let typeSpeed = 5;
+    let typeSpeed = 2;
     const interval = setInterval(() => {
       setDisplayText(textRef.current.slice(0, i));
-      i += 2;
+      i += 6;
       if (i > textRef.current.length) {
         clearInterval(interval);
         setIsTyping(false);

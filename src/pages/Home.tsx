@@ -11,15 +11,64 @@ function ProjectPreviews() {
   return (
     <div>
       {/* Project previews */}
+
       <ProjectCard
         title="Space Minecraft"
         description="Minecraft but in space! Place blocks on Saturn's rings, explore the procedural Earth, roam through the Sun's blazing hot atmosphere."
         imageURL1="spaceminecraft1.mp4"
-        imageURL2="spaceminecraft2.mp4"
+        imageURL2="minecraft breakdown edit.mp4"
         whatitis="MINECRAFT BUT SPACE"
         tools="C++, GLSL, OpenGL, Qt Creator"
         datestart="Nov 2025"
         dateend="Dec 2025"
+      ></ProjectCard>
+
+      <ProjectCard
+        title="Moon Tycoon"
+        description="A 3D simulation of the lunar surface in support of the Artemis program. The project is designed to help engineers
+        test In-Situ Resource Utilization (ISRU) technologies such as rovers, landers, and vehicles, and plan lunar surface operations.
+        This was my Summer 2026 internship project, working full time at NASA's Kennedy Space Center."
+        imageURL1="moontycoon3.png"
+        imageURL2="moontycoonscreenshot.png"
+        whatitis="NASA INTERNSHIP PROJECT"
+        tools="Unity, C#, HLSL, Compute Shaders"
+        datestart="June 2026"
+        dateend="Aug 2026"
+      ></ProjectCard>
+
+      <ProjectCard
+        title="Detention Bums"
+        description="Achieved 25th Overall out of 3506 entries in Juniper Dev Game Jam. 
+        This is a 3D game where you play as a kid trying to have fun in detention without Teacher Joe noticing. 
+        You discretely spin a pen in one hand and play phone games in the other!"
+        imageURL1="detentionbumsclips.mp4"
+        imageURL2="penspinning1.mp4"
+        whatitis="PEN SPINNING GAME"
+        tools="Unity, C#, HLSL, Compute Shaders"
+        datestart="June 2026"
+        dateend=""
+      ></ProjectCard>
+
+      <ProjectCard
+        title="Differential Growth With Cell Differentiation"
+        description="A simulation of plant growth, simulating differential growth, cell differentiation, and auxin growth hormones"
+        imageURL1="randomdiffgrowthsample.mp4"
+        imageURL2="diffgrowthgif2.gif"
+        whatitis="SIMULATION"
+        tools="Unity, C#, HLSL, Compute Shaders"
+        datestart="June 2026"
+        dateend="Sept 2026"
+      ></ProjectCard>
+
+      <ProjectCard
+        title="A Bear Game"
+        description="Play as a bear who does bear things, like fishing, catching bugs, and ... driving a car? In this cozy toon-shaded world you can talk to people, buy donuts, take pictures, and sail on a boat! Explore the open beaches, islands, cities, and forests."
+        imageURL1="beargamereel1.mp4"
+        imageURL2="beargamereel2.mp4"
+        whatitis="EXPLORATION GAME"
+        tools="Unity, C#, Shader Graph, VFX Graph"
+        datestart="Dec 2025"
+        dateend="PRESENT"
       ></ProjectCard>
 
       <ProjectCard
@@ -55,16 +104,6 @@ function ProjectPreviews() {
         dateend="May 2025"
       ></ProjectCard>
 
-      <ProjectCard
-        title="A Bear Game"
-        description="Play as a bear who does bear things, like fishing, catching bugs, and ... driving a car? In this cozy toon-shaded world you can talk to people, buy donuts, take pictures, and sail on a boat! Explore the open beaches, islands, cities, and forests."
-        imageURL1="abeargame2.mp4"
-        imageURL2="abeargame3.mp4"
-        whatitis="EXPLORATION GAME"
-        tools="Unity, C#, Shader Graph, VFX Graph"
-        datestart="Dec 2024"
-        dateend="Apr 2025"
-      ></ProjectCard>
 
 
       <ProjectCard
@@ -295,7 +334,8 @@ function Home() {
             <pre className=
             {isMobile ? "absolute select-none -top-4 left-0 w-full h-full rotate-355 text-[0.5rem] font-mono bg-gradient-to-tl from-green-200/0 to-green-200/40 bg-clip-text text-transparent pointer-events-none overflow-hidden" : 
             "absolute select-none -top-4 left-0 w-full h-full rotate-355 text-[10px] font-mono bg-gradient-to-tl from-green-200/0 to-green-200/40 bg-clip-text text-transparent pointer-events-none overflow-hidden"}>
-              {`#ifdef WELCOME_TO_MY_PORTFOLIO
+              {
+`#ifdef WELCOME_TO_MY_PORTFOLIO
 precision mediump float;
 #endif
 
@@ -327,7 +367,8 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 void main() {
     mainImage(gl_FragColor, gl_FragCoord.xy);
 }
-  `}
+`
+  }
             </pre>
           </div>
 
@@ -351,7 +392,7 @@ void main() {
             />
           </div>
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#fefff0]/100 via-[white]/30 to-white/10 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-[#ffffff]/40 pointer-events-none"></div>
         </section>
         )}
       </main>
