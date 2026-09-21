@@ -62,6 +62,15 @@ function Intro() {
           >
             LinkedIn
           </a>
+          <span> or </span>
+          <a
+            className="text-blue-200"
+            href="https://www.instagram.com/abeargame/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
         </div>
       </p>
     </div>
