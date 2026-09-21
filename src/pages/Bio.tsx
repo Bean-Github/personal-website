@@ -17,10 +17,11 @@ function Intro() {
           // About me
         </span>{" "}
         <br />
-        I’m a sophomore at the{" "}
+        I’m a junior at the{" "}
         <span className="text-orange-300">University of Pennsylvania</span>{" "}
-        studying <span className="text-orange-300">computer graphics</span>. I
-        love exploring the natural world by recreating it in code.
+        studying <span className="text-orange-300">computer graphics</span>. I am pursuing an Accelerated
+        Master's degree in Computer Graphics and Game Technologies, and a Bachelor's degree in Digital Media Design. I
+        love making games and exploring the natural world by recreating it in code.
       </p>
 
       <p>
