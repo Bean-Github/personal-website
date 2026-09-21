@@ -189,7 +189,7 @@ Please change the parent <Route path="${V}"> to <Route path="${V==="/"?"*":`${V}
         <img src="../images/beargamereel3.gif">
         </img> 
         
-        <br/> <br/>
+        <br/>
 
         The water shader uses a combination of vertex displacement, depth, normal mapping, 
         Fresnel effects, planar reflections, and ripple effects to create realistic water surfaces. 
@@ -200,6 +200,7 @@ Please change the parent <Route path="${V}"> to <Route path="${V==="/"?"*":`${V}
         render textures.
         Additionally, when you take a photo, the image will save with a unique description! <br/> <br/>
         Here is a fun photo I took in the game:
+        <br/><br/>
       <img src="../images/abeargame7.png">
       </img>
       `;case"descent":return`Descent was a game I made in a semester with a group of friends. It's a snowboarding game that is able to detect your tricks and 
