@@ -243,7 +243,7 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
         <img src="../images/beargamereel3.gif">
         </img> 
         
-        <br/> <br/>
+        <br/>
 
         The water shader uses a combination of vertex displacement, depth, normal mapping, 
         Fresnel effects, planar reflections, and ripple effects to create realistic water surfaces. 
@@ -254,6 +254,7 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
         render textures.
         Additionally, when you take a photo, the image will save with a unique description! <br/> <br/>
         Here is a fun photo I took in the game:
+        <br/><br/>
       <img src="../images/abeargame7.png">
       </img>
       `;
