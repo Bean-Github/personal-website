@@ -37,6 +37,18 @@ function ProjectPreviews() {
       ></ProjectCard>
 
       <ProjectCard
+        title="3D Pokemon Cards"
+        description="Stylized scenes and animations inspired by Pokemon cards! Includes many custom shaders and
+        stylized effects. Videos about these cards got over 250,000 views on Instagram!"
+        imageURL1="pokemoncards1.mp4"
+        imageURL2="pokemoncards2.mp4"
+        whatitis="3D ART"
+        tools="Blender, Unity, Shader Graph, HLSL"
+        datestart="October 2026"
+        dateend="PRESENT"
+      ></ProjectCard>
+
+      <ProjectCard
         title="Detention Bums"
         description="Achieved 25th Overall out of 3506 entries in Juniper Dev Game Jam. 
         This is a 3D game where you play as a kid trying to have fun in detention without Teacher Joe noticing. 

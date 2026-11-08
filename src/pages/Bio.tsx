@@ -150,6 +150,38 @@ const Bio: React.FC<BioProps> = ({ activeProject }) => {
       target="_blank" rel="noopener noreferrer">NASA Project Takes off with New 3D Lunar Simulation</a></u>
       `;
 
+      case "3d-pokemon-cards":
+        return `
+          These cards have accumulated over 250,000 views on Instagram! Check it out 
+          <u><a href="https://www.instagram.com/atinybean/"    target="_blank" 
+            rel="noopener noreferrer" 
+            referrerpolicy="no-referrer">
+              @atinybean </a></u>
+          <br/><br/>
+
+          This is an ongoing art project where I recreate Pokemon card art but in 3D. 
+          Throughout these 5 cards, I have worked on many kinds of stylized effects 
+          and shaders. I had a ton of fun making things like stylized water, card holographic shimmers, 
+          star particles, bubble particles, god rays, lens flares, and translucent slime shaders! 
+          <br/><br/>
+          
+          For the 3D parallax effect, I used a custom stencil pipeline that renders objects 
+          inside the card with a stencil value and uses masks to cut anything outside
+          of the card frame. This gives the cool effect of 3D depth within the 2D card!  
+          <br/><br/>
+          
+          My water shaders feature with ripples, foam, layered noise, 
+          and caustics! I made several tools within Unity to help me build diverse 
+          environments, such as an instanced grass painter tool that lets me quickly paint 
+          GPU instanced grass onto 3D meshes. 
+          <br/><br/> 
+          
+          Another tool I made was a custom toon shader that 
+          lets you define custom lighting directions for highlights, backlighting, and midtones. 
+          This came in handy when creating very specific stylized lighting conditions and making 
+          the render as close to the reference art as I could! 
+        `
+
       case "detention-bums":
         return `
         <img src="../images/detentionbumsthumbnail_1.png" className="w-[100%] mb-4"></img>
